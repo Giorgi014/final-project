@@ -1,1 +1,59 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "plus-jakarta-sans-regular";
+  src: url("./assets/font/jskarta-sans/PlusJakartaSans-Regular.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "plus-jakarta-sans-medium";
+  src: url("./assets/font/jskarta-sans/PlusJakartaSans-Medium.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "plus-jakarta-sans-semiBold";
+  src: url("./assets/font/jskarta-sans/PlusJakartaSans-SemiBold.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "plus-jakarta-sans-bold";
+  src: url("./assets/font/jskarta-sans/PlusJakartaSans-Bold.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@theme {
+  /* ================================ COLORS ================================ */
+  --color-primary: #c70e1a;
+  --color-crimson: #720109;
+  --color-secondary: #d3d3d3;
+  --color-base: #ffffff;
+  --color-accent: #f4a03b;
+  --color-foreground: #151515;
+
+  /* ================================ FONTS ================================ */
+
+  --font-jakarta-regular: "plus-jakarta-sans-regular", sans-serif;
+  --font-jakarta-medium: "plus-jakarta-sans-medium", sans-serif;
+  --font-jakarta-semiBold: "plus-jakarta-sans-semiBold", sans-serif;
+  --font-jakarta-bold: "plus-jakarta-sans-bold", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #151515;
+  overflow-x: hidden;
+}
