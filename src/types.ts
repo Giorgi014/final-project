@@ -21,3 +21,10 @@ export interface Hero {
     };
   };
 }
+
+export interface SatsSection {
+  stats: {
+    value: string;
+    label: string;
+  }[];
+}

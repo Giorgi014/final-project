@@ -55,7 +55,7 @@ export const Header = () => {
         />
       )}
 
-      {isOpen && <MobileMenu />}
+      <MobileMenu isOpen={isOpen} />
     </header>
   );
 };
