@@ -15,7 +15,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="w-full max-w-360 flex justify-between items-center gap-2.5 mt-10 xl:mt-15 px-5 xl:px-20">
+    <header className="w-full max-w-360 flex justify-between items-center gap-2.5 mt-10 mx-auto xl:mt-15 px-5 xl:px-20">
       <div className="flex justify-start items-center gap-3 cursor-pointer">
         <img src={Logo} alt="logo" className="w-9.75 h-12" />
         <h1 className="font-jakarta-bold text-[20px] text-primary">Stygar</h1>
