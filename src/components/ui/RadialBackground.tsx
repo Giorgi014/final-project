@@ -1,11 +1,5 @@
-import type { ReactNode, CSSProperties } from "react";
-
-interface RadialBackgroundProps {
-  children?: ReactNode;
-  className?: string;
-  position?: string;
-  opacity?: number;
-}
+import type { CSSProperties } from "react";
+import type { RadialBackgroundProps } from "@/types";
 
 export const RadialBackground = ({
   children,

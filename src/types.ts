@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 export type Navigation = {
   id: number;
   page: string;
@@ -28,3 +30,46 @@ export interface SatsSection {
     label: string;
   }[];
 }
+
+export interface RadialBackgroundProps {
+  children?: ReactNode;
+  className?: string;
+  position?: string;
+  opacity?: number;
+}
+
+export interface IntroSectionProps {
+  title: string;
+  description: string;
+  actionLabel?: string;
+  onAction?: () => void;
+}
+
+export interface IntroSection {
+  ourProjects: {
+    title: string;
+    description: string;
+    actionLabel: string;
+  };
+  futuredProjects: {
+    title: string;
+    description: string;
+    actionLabel: string;
+  };
+  ourJurney: {
+    title: string;
+    description: string;
+  };
+}
+
+export type ProjectCardProps = {
+  image: string;
+  title: string;
+  category: string;
+};
+
+export type FutureCardProps = {
+  image: string;
+  title: string;
+  description: string;
+};

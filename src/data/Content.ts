@@ -1,4 +1,4 @@
-import type { Hero, SatsSection } from "../types";
+import type { Hero, IntroSection, SatsSection } from "@/types";
 
 export const HERO: Hero = {
   title: {
@@ -38,4 +38,24 @@ export const STATS_SECTION: SatsSection = {
       label: "Support Available",
     },
   ],
+};
+
+export const INTRO_SECTION: IntroSection = {
+  ourProjects: {
+    title: "Our Projects",
+    description:
+      "Pizza ipsum dolor meat lovers buffalo. Extra broccoli parmesan ricotta garlic dolor sauce marinara Chicago marinara. Tomato dolor pesto pesto Bianca pesto roll onions.",
+    actionLabel: "Show All",
+  },
+  futuredProjects: {
+    title: "Futured Projects",
+    description:
+      "Pizza ipsum dolor meat lovers buffalo. Extra broccoli parmesan ricotta garlic dolor sauce marinara Chicago marinara. Tomato dolor pesto pesto Bianca pesto roll onions.",
+    actionLabel: "Show All",
+  },
+  ourJurney: {
+    title: "Our Jurney",
+    description:
+      "Pizza ipsum dolor meat lovers buffalo. Extra broccoli parmesan ricotta garlic dolor sauce marinara Chicago marinara. Tomato dolor pesto pesto Bianca pesto roll onions.",
+  },
 };

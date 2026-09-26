@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "../ui/Button";
-import { navigation } from "./Navigation";
+import { Button } from "@/components/ui/Button";
+import { navigation } from "@/components/Header/Navigation";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -28,7 +28,7 @@ export const MobileMenu = ({ isOpen }: MobileMenuProps) => {
             return (
               <li
                 key={item.id}
-                className={`text-[18px] font-jakarta-regular hover:text-primary transition-colors duration-300 cursor-pointer
+                className={`text-[18px] font-comfortaa-regular hover:text-primary transition-colors duration-300 cursor-pointer
                   ${isActive ? "text-foreground border-b pb-0.5" : "text-secondary"}`}
               >
                 <Link to={item.src}>{item.page}</Link>

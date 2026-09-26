@@ -1,9 +1,9 @@
 import { IoMenu, IoClose } from "react-icons/io5";
-import { Button } from "../ui/Button";
-import Logo from "./../../assets/img/stygar.svg";
-import { navigation } from "./Navigation";
+import { Button } from "@/components/ui/Button";
+import { Logo } from "@/assets";
+import { navigation } from "@/components/Header/Navigation";
 import { useState } from "react";
-import { MobileMenu } from "./MobileMenu";
+import { MobileMenu } from "@/components/Header/MobileMenu";
 import { Link, useLocation } from "react-router-dom";
 
 export const Header = () => {
@@ -17,8 +17,8 @@ export const Header = () => {
   return (
     <header className="w-full max-w-360 flex justify-between items-center gap-2.5 mt-10 mx-auto xl:mt-15 px-5 xl:px-20">
       <div className="flex justify-start items-center gap-3 cursor-pointer">
-        <img src={Logo} alt="logo" className="w-9.75 h-12" />
-        <h1 className="font-jakarta-bold text-[20px] text-primary">Stygar</h1>
+        <img src={Logo} alt="Stygar logo" className="w-9.75 h-12" />
+        <h1 className="font-jakarta-bold text-[36px] text-primary">Stygar</h1>
       </div>
 
       <nav className="hidden lg:block">
@@ -29,7 +29,7 @@ export const Header = () => {
             return (
               <li
                 key={item.id}
-                className={`text-[18px] font-jakarta-regular hover:text-primary transition-colors duration-300 cursor-pointer
+                className={`text-[18px] font-comfortaa-regular hover:text-primary transition-colors duration-300 cursor-pointer
                   ${isActive ? "text-primary border-b pb-0.5" : "text-secondary"}`}
               >
                 <Link to={item.src}>{item.page}</Link>

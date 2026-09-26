@@ -1,13 +1,14 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App.tsx";
+import App from "@/App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./pages/Home.tsx";
-import About from "./pages/About.tsx";
-import Contact from "./pages/Contact.tsx";
-import Portfolio from "./pages/Portfolio.tsx";
-import Services from "./pages/Services.tsx";
-import "./index.css";
+import Home from "@/pages/Home";
+import About from "@/pages/About";
+import Contact from "@/pages/Contact";
+import Portfolio from "@/pages/Portfolio";
+import Services from "@/pages/Services";
+import Project from "@/pages/Project";
+import "@/index.css";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
       { path: "portfolio", element: <Portfolio /> },
       { path: "about", element: <About /> },
       { path: "contact", element: <Contact /> },
+      { path: "project", element: <Project /> },
     ],
   },
 ]);
