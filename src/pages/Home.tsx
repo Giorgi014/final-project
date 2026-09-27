@@ -4,10 +4,11 @@ import {
   OurProjects,
   RadialBackground,
   StatsSection,
+  OurJurney,
 } from "@/components";
+import { OurAchievements } from "@/components/OurAchievements";
 
 const Home = () => {
-  // const ourJurney = INTRO_SECTION.ourJurney;
   return (
     <main className="pt-3.75">
       <RadialBackground position="90% 50%">
@@ -18,6 +19,8 @@ const Home = () => {
         <OurProjects />
       </RadialBackground>
       <FuturedProject />
+      <OurJurney />
+      <OurAchievements />
     </main>
   );
 };

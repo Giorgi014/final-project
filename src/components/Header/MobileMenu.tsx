@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui";
 import { navigation } from "@/components/Header/Navigation";
 
 interface MobileMenuProps {

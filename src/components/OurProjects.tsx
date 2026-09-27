@@ -1,7 +1,7 @@
 import { INTRO_SECTION } from "@/data/Content";
 import { IntroSection } from "@/components/IntroSection";
 import { Cover, Cover9, Cover10, Cover11 } from "@/assets/index";
-import { ProjectCard } from "@/components/ProjectCard";
+import { ProjectCard } from "@/components/ui";
 
 export const OurProjects = () => {
   const ourProjects = INTRO_SECTION.ourProjects;

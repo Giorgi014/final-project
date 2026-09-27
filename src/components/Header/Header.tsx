@@ -1,5 +1,5 @@
 import { IoMenu, IoClose } from "react-icons/io5";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui";
 import { Logo } from "@/assets";
 import { navigation } from "@/components/Header/Navigation";
 import { useState } from "react";

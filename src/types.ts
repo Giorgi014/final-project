@@ -73,3 +73,10 @@ export type FutureCardProps = {
   title: string;
   description: string;
 };
+
+export type NumberedInfoCardProps = {
+  num: string;
+  title: string;
+  description?: string;
+  className?: string;
+};

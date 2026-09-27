@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { HERO } from "@/data/Content";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui";
 import { HiArrowLongRight } from "react-icons/hi2";
 import { HeroBackground, HeroCharacter } from "@/assets";
 

@@ -1,6 +1,6 @@
 import { INTRO_SECTION } from "@/data/Content";
 import { IntroSection } from "./IntroSection";
-import { FutureCard } from "./FutureCard";
+import { FutureCard } from "./ui";
 import {
   CardCover6,
   CardCover5,
@@ -27,13 +27,13 @@ export const FuturedProject = () => {
         description={futuredProjects.description}
         actionLabel={futuredProjects.actionLabel}
       />
-      <section className="w-full mt-15">
+      <section className="w-full grid sm:grid-cols-[repeat(2,auto)] lg:grid-cols-[repeat(3,auto)] justify-center md:justify-between gap-5 gap-y-10 mt-15">
         {images.map((image) => (
           <FutureCard
             key={image}
             image={image}
             title={"Web Development"}
-            description={"Pizza ipsum dolor meat lovers buffalo. "}
+            description={"Pizza ipsum dolor meat lovers buffalo."}
           />
         ))}
       </section>
