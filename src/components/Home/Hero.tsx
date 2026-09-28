@@ -38,7 +38,7 @@ export const Hero = () => {
         </div>
         <img
           src={HeroCharacter}
-          alt="Smiling illustrated avatar"
+          alt="Illustration of a smiling person"
           className="w-[clamp(200px,35vw,366px)]"
         />
       </section>

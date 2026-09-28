@@ -6,7 +6,7 @@ export type Navigation = {
   src: string;
 };
 
-export interface Hero {
+export interface HeroContent {
   title: {
     prefix: string;
     highlight: string;
@@ -24,7 +24,7 @@ export interface Hero {
   };
 }
 
-export interface SatsSection {
+export interface StatsSectionContent {
   stats: {
     value: string;
     label: string;
@@ -45,7 +45,7 @@ export interface IntroSectionProps {
   onAction?: () => void;
 }
 
-export interface IntroSection {
+export interface IntroSectionsContent {
   ourProjects: {
     title: string;
     description: string;
@@ -60,6 +60,29 @@ export interface IntroSection {
     title: string;
     description: string;
   };
+}
+
+export interface TeamMemberContent {
+  image: string;
+  member: string;
+  role: string;
+}
+
+export interface TeamSectionContent {
+  title: string;
+  members: TeamMemberContent[];
+}
+
+export interface AchievementContent {
+  num: string;
+  title: string;
+  description?: string;
+}
+
+export interface AchievementsSectionContent {
+  title: string;
+  description: string;
+  achievements: AchievementContent[];
 }
 
 export type ProjectCardProps = {
@@ -79,4 +102,5 @@ export type NumberedInfoCardProps = {
   title: string;
   description?: string;
   className?: string;
+  active?: boolean;
 };

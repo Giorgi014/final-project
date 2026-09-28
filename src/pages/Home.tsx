@@ -5,6 +5,7 @@ import {
   RadialBackground,
   StatsSection,
   OurJurney,
+  OurTeamMembers,
 } from "@/components";
 import { OurAchievements } from "@/components/OurAchievements";
 
@@ -21,6 +22,7 @@ const Home = () => {
       <FuturedProject />
       <OurJurney />
       <OurAchievements />
+      <OurTeamMembers />
     </main>
   );
 };

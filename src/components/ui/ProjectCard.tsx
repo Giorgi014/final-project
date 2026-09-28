@@ -3,7 +3,7 @@ import type { ProjectCardProps } from "@/types";
 export const ProjectCard = ({ image, title, category }: ProjectCardProps) => {
   return (
     <div className="w-full max-w-155 rounded-3xl cursor-pointer relative mx-auto">
-      <img src={image} alt={title} className="w-full" />
+      <img src={image} alt={`${title} project preview`} className="w-full" />
       <div className="absolute bottom-7 left-6">
         <h2 className="text-2xl font-comfortaa-semiBold text-base leading-7.5 tracking-[-0.15px]">
           {title}

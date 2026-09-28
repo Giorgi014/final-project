@@ -13,7 +13,11 @@ export const OurJurney = () => {
       />
       <section className="w-full relative">
         <img src={Stroke} alt="" className="w-[clamp(400px,65vw,828px)] ml-5" />
-        <img src={Jurney} alt="" className="w-full absolute top-11.25 left-0" />
+        <img
+          src={Jurney}
+          alt="Illustrated timeline of the company's journey"
+          className="w-full absolute top-11.25 left-0"
+        />
       </section>
     </article>
   );

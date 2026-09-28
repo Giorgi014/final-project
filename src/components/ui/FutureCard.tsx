@@ -4,7 +4,7 @@ import type { FutureCardProps } from "@/types";
 export const FutureCard = ({ image, title, description }: FutureCardProps) => {
   return (
     <div className="w-full max-w-83.75 rounded-3xl border-2 border-base/80">
-      <img src={image} alt={description} className="w-full" />
+      <img src={image} alt={`${title} project preview`} className="w-full" />
       <div className="backdrop-blur-xl p-6 rounded-b-3xl">
         <h2 className="text-[20px] text-base font-comfortaa-bold leading-6">
           {title}
