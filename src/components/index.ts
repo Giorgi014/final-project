@@ -1,4 +1,5 @@
 export { ExperiencesSection } from "./ExperiencesSection";
+export { ExperienceCard } from "./ExperienceCard";
 export { Footer } from "./Footer";
 export { FuturedProject } from "./FuturedProject";
 export { Header } from "./Header/Header";

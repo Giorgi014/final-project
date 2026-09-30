@@ -9,8 +9,9 @@ import {
   User8,
   User9,
 } from "@/assets";
+import { ExperienceCard } from "./ExperienceCard";
 import { SectionTitle } from "./ui";
-import { FaStar } from "react-icons/fa";
+import { useState } from "react";
 
 const images = [User, User2, User3, User4, User5, User6, User7, User8, User9];
 
@@ -21,16 +22,21 @@ const SIZE_STEP = 10;
 const users = {
   name: "Daniel Carter",
   timeLine: "1 Day ago",
-  stars: Array.from({ length: 5 }, (_, index) => ({
-    id: `${index + 1}`,
-    icon: <FaStar key={index} className="text-[#F5C451]" />,
-  })),
   evaluation: "5.0",
   review:
     "I started following the meal plans here and within a month, my energy levels doubled! The recipes are tasty, easy to cook, and perfect for my busy lifestyle.",
 };
 
+const experiences = Array.from({ length: 9 }, (_, index) => ({
+  id: index,
+  ...users,
+}));
+
 export const ExperiencesSection = () => {
+  const [activeIndex, setActiveIndex] = useState(CENTER_INDEX);
+  const CARD_WIDTH = 679;
+  const CARD_GAP = 24;
+
   return (
     <article className="w-full max-w-7xl px-5 mx-auto mt-15 md:mt-37.5">
       <SectionTitle title="Experiences That Inspire" />
@@ -55,18 +61,22 @@ export const ExperiencesSection = () => {
           );
         })}
       </section>
-      <section>
-        <div className="text-center mt-12">
-          <div className="flex justify-center gap-1">
-            {users.stars.map((star) => (
-              <span key={star.id}>{star.icon}</span>
-            ))}
-          </div>
-          <p>{users.evaluation}</p>
-          <p>{users.review}</p>
-          <h3>{users.name}</h3>
-          <span>{users.timeLine}</span>
-        </div>
+      <section
+        className="flex transition-transform duration-500 ease-out"
+        style={{
+          gap: CARD_GAP,
+          transform: `translateX(calc(50% - ${CARD_WIDTH / 2}px - ${
+            activeIndex * (CARD_WIDTH + CARD_GAP)
+          }px))`,
+        }}
+      >
+        {experiences.map((experience, index) => (
+          <ExperienceCard
+            key={experience.id}
+            {...experience}
+            isActive={index === activeIndex}
+          />
+        ))}
       </section>
     </article>
   );
