@@ -6,6 +6,7 @@ import {
   StatsSection,
   OurJurney,
   OurTeamMembers,
+  ExperiencesSection,
 } from "@/components";
 import { OurAchievements } from "@/components/OurAchievements";
 
@@ -23,6 +24,7 @@ const Home = () => {
       <OurJurney />
       <OurAchievements />
       <OurTeamMembers />
+      <ExperiencesSection />
     </main>
   );
 };

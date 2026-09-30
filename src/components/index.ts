@@ -1,3 +1,4 @@
+export { ExperiencesSection } from "./ExperiencesSection";
 export { Footer } from "./Footer";
 export { FuturedProject } from "./FuturedProject";
 export { Header } from "./Header/Header";
@@ -15,4 +16,5 @@ export {
   ProjectCard,
   RadialBackground,
   SectionTitle,
+  CornerCard,
 } from "./ui";
