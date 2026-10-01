@@ -1,5 +1,13 @@
+import { CtaSection, ExperiencesSection, OurJurney } from "@/components";
+
 const Project = () => {
-  return <div>Project</div>;
+  return (
+    <main className="pt-3.75 overflow-x-hidden">
+      <OurJurney />
+      <ExperiencesSection />
+      <CtaSection />
+    </main>
+  );
 };
 
 export default Project;

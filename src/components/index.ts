@@ -1,3 +1,4 @@
+export { CtaSection } from "./CtaSection";
 export { ExperiencesSection } from "./ExperiencesSection";
 export { ExperienceCard } from "./ExperienceCard";
 export { Footer } from "./Footer";

@@ -17,7 +17,7 @@ export const Hero = () => {
       />
       <section className="w-full max-w-302.5 flex flex-col justify-between items-center sm:flex-row sm:items-center mt-15 md:mt-25 px-5">
         <div className="w-full max-w-156.5 text-center sm:text-start">
-          <h2 className="font-comfortaa-bold text-[clamp(32px,6vw,64px)] text-base">
+          <h2 className="font-comfortaa-bold text-[clamp(32px,6vw,64px)] text-base leading-19 tracking-[-0.8px]">
             {title.prefix}{" "}
             <span className="text-primary">{title.highlight}</span>{" "}
             {title.suffix}
