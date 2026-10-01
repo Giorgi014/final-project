@@ -1,4 +1,4 @@
-import { OUR_TEAM_SECTION } from "@/data/Content";
+import { OUR_TEAM_SECTION } from "@/data/home";
 import { CornerFrame, OutlinedHeading, SectionTitle } from "./ui";
 
 export const OurTeamMembers = () => {
@@ -9,7 +9,7 @@ export const OurTeamMembers = () => {
         {OUR_TEAM_SECTION.members.map((memb, index) => (
           <div
             key={memb.member}
-            className="w-full flex flex-col justify-center sm:flex-row sm:justify-between items-center gap-6"
+            className="w-full flex flex-col justify-center sm:flex-row sm:justify-between items-center text-center gap-6"
           >
             <div className="w-full max-w-53 flex justify-start items-center gap-3">
               <img

@@ -1,6 +1,6 @@
-import type { ProjectCardProps } from "@/types";
+import type { ProjectContent } from "@/types/home";
 
-export const ProjectCard = ({ image, title, category }: ProjectCardProps) => {
+export const ProjectCard = ({ image, title, category }: ProjectContent) => {
   return (
     <div className="w-full max-w-155 rounded-3xl cursor-pointer relative mx-auto">
       <img src={image} alt={`${title} project preview`} className="w-full" />

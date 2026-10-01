@@ -1,5 +1,5 @@
 import { LeftDots, RightDots, Twenty, Twentyfive } from "@/assets";
-import { ACHIEVEMENTS_SECTION } from "@/data/Content";
+import { ACHIEVEMENTS_SECTION } from "@/data/home";
 import { NumberedInfoCard, SectionTitle } from "./ui";
 
 export const OurAchievements = () => {

@@ -1,4 +1,4 @@
-import { INTRO_SECTION } from "@/data/Content";
+import { INTRO_SECTION } from "@/data/home";
 import { IntroSection } from "./IntroSection";
 import { Jurney, Stroke } from "@/assets";
 

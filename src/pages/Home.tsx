@@ -12,7 +12,7 @@ import { OurAchievements } from "@/components/OurAchievements";
 
 const Home = () => {
   return (
-    <main className="pt-3.75">
+    <main className="pt-3.75 overflow-x-hidden">
       <RadialBackground position="90% 50%">
         <Hero />
       </RadialBackground>

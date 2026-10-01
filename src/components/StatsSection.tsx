@@ -1,4 +1,4 @@
-import { STATS_SECTION } from "@/data/Content";
+import { STATS_SECTION } from "@/data/home";
 import { LeftDots, RightDots } from "@/assets";
 
 export const StatsSection = () => {
