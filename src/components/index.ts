@@ -4,7 +4,8 @@ export { ExperienceCard } from "./ExperienceCard";
 export { Footer } from "./Footer";
 export { FuturedProject } from "./FuturedProject";
 export { Header } from "./Header/Header";
-export { Hero } from "./Home/Hero";
+export { HeroHome } from "./Home/HeroHome";
+export { Hero } from "./Hero";
 export { IntroSection } from "./IntroSection";
 export { OurProjects } from "./OurProjects";
 export { OurJurney } from "./OurJurney";
@@ -13,6 +14,7 @@ export { StatsSection } from "./StatsSection";
 
 export {
   Button,
+  FooterDivider,
   FutureCard,
   NumberedInfoCard,
   ProjectCard,

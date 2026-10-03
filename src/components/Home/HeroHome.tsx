@@ -4,7 +4,7 @@ import { Button } from "@/components/ui";
 import { HiArrowLongRight } from "react-icons/hi2";
 import { HeroBackground, HeroCharacter } from "@/assets";
 
-export const Hero = () => {
+export const HeroHome = () => {
   const title = HERO.title;
   const btns = HERO.buttons;
 

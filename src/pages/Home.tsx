@@ -1,6 +1,6 @@
 import {
   FuturedProject,
-  Hero,
+  HeroHome,
   OurProjects,
   RadialBackground,
   StatsSection,
@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <main className="pt-3.75 overflow-x-hidden">
       <RadialBackground position="90% 50%">
-        <Hero />
+        <HeroHome />
       </RadialBackground>
       <StatsSection />
       <RadialBackground position="0% 130%">
