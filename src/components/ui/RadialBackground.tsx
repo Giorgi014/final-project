@@ -5,7 +5,7 @@ export const RadialBackground = ({
   children,
   className = "",
   position = "50% 0%",
-  opacity = 0.35,
+  opacity = 0.3,
 }: RadialBackgroundProps) => {
   const style: CSSProperties = {
     background: `radial-gradient(circle at ${position}, rgba(199,14,26,${opacity}), transparent 60%)`,
@@ -13,7 +13,10 @@ export const RadialBackground = ({
 
   return (
     <div className={`${className}`}>
-      <div className="fixed inset-0 -z-10 pointer-events-none" style={style} />
+      <div
+        className="fixed inset-0 -z-10 pointer-events-none backdrop-blur-2xl"
+        style={style}
+      />
       {children}
     </div>
   );

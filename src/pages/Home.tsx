@@ -10,23 +10,24 @@ import {
   CtaSection,
 } from "@/components";
 import { OurAchievements } from "@/components/OurAchievements";
+import { PROJECTS } from "@/data/home";
 
 const Home = () => {
   return (
     <main className="pt-3.75 overflow-x-hidden">
-      <RadialBackground position="90% 50%">
-        <HeroHome />
+      <RadialBackground position="100% 50%">
+        <RadialBackground position="10% 130%">
+          <HeroHome />
+          <StatsSection />
+          <OurProjects projects={PROJECTS} />
+          <FuturedProject />
+          <OurJurney />
+          <OurAchievements />
+          <OurTeamMembers />
+          <ExperiencesSection />
+          <CtaSection />
+        </RadialBackground>
       </RadialBackground>
-      <StatsSection />
-      <RadialBackground position="0% 130%">
-        <OurProjects />
-      </RadialBackground>
-      <FuturedProject />
-      <OurJurney />
-      <OurAchievements />
-      <OurTeamMembers />
-      <ExperiencesSection />
-      <CtaSection />
     </main>
   );
 };

@@ -1,4 +1,6 @@
 export { CtaSection } from "./CtaSection";
+export { DesignSolution } from "./DesignSolution";
+export { Dream } from "./Dream";
 export { ExperiencesSection } from "./ExperiencesSection";
 export { ExperienceCard } from "./ExperienceCard";
 export { Footer } from "./Footer";
@@ -14,11 +16,12 @@ export { StatsSection } from "./StatsSection";
 
 export {
   Button,
+  CornerCard,
   FooterDivider,
   FutureCard,
   NumberedInfoCard,
   ProjectCard,
   RadialBackground,
   SectionTitle,
-  CornerCard,
+  ServiceCard,
 } from "./ui";

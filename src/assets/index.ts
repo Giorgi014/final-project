@@ -20,6 +20,7 @@ export { default as Cover9 } from "./img/cover9.svg";
 export { default as Cover10 } from "./img/cover10.svg";
 export { default as Cover11 } from "./img/cover11.svg";
 export { default as ErrorIllustration } from "./img/error.svg";
+export { default as Frame } from "./img/frame.svg";
 export { default as GoogleLogo } from "./img/google-logo.svg";
 export { default as HeroCharacter } from "./img/happy-avatar.svg";
 export { default as HeroCharacterAlt } from "./img/happy-avatar2.svg";

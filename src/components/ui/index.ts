@@ -8,3 +8,4 @@ export { OutlinedHeading } from "./OutlinedHeading";
 export { ProjectCard } from "./ProjectCard";
 export { RadialBackground } from "./RadialBackground";
 export { SectionTitle } from "./SectionTitle";
+export { ServiceCard } from "./ServiceCard";
