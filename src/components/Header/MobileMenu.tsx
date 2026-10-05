@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui";
-import { navigation } from "@/components/Header/Navigation";
+import { navigation } from "@/components/header/Navigation";
 
 interface MobileMenuProps {
   isOpen: boolean;

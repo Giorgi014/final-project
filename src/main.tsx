@@ -8,6 +8,9 @@ import Contact from "@/pages/Contact";
 import Portfolio from "@/pages/Portfolio";
 import Services from "@/pages/Services";
 import Project from "@/pages/Project";
+import ErrorPage from "./pages/ErrorPage";
+import ErrorLayout from "./layouts/ErrorPageLayout";
+import Auth from "./pages/Auth";
 import "@/index.css";
 
 const router = createBrowserRouter([
@@ -21,6 +24,14 @@ const router = createBrowserRouter([
       { path: "about", element: <About /> },
       { path: "contact", element: <Contact /> },
       { path: "project", element: <Project /> },
+    ],
+  },
+  {
+    path: "*",
+    element: <ErrorLayout />,
+    children: [
+      { path: "*", element: <ErrorPage /> },
+      { path: "auth", element: <Auth /> },
     ],
   },
 ]);
