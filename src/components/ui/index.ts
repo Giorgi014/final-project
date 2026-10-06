@@ -3,6 +3,7 @@ export { CornerFrame } from "./CornerFrame";
 export { CornerCard } from "./CornerCard";
 export { FooterDivider } from "./FooterDivider";
 export { FutureCard } from "./FutureCard";
+export { Input } from "./Input";
 export { NumberedInfoCard } from "./NumberedInfoCard";
 export { OutlinedHeading } from "./OutlinedHeading";
 export { ProjectCard } from "./ProjectCard";

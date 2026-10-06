@@ -21,6 +21,7 @@ export {
   CornerCard,
   FooterDivider,
   FutureCard,
+  Input,
   NumberedInfoCard,
   ProjectCard,
   RadialBackground,
