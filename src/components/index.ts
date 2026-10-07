@@ -1,4 +1,6 @@
 export { CtaSection } from "./CtaSection";
+export { ContactSection } from "./ContactSection";
+export { ContactForm } from "./ContactForm";
 export { DesignSolution } from "./DesignSolution";
 export { Dream } from "./Dream";
 export { ExperiencesSection } from "./ExperiencesSection";

@@ -1,5 +1,10 @@
 import { ContactIllustration } from "@/assets";
-import { Hero, RadialBackground, StatsSection } from "@/components";
+import {
+  ContactSection,
+  Hero,
+  RadialBackground,
+  StatsSection,
+} from "@/components";
 
 const Contact = () => {
   return (
@@ -11,7 +16,8 @@ const Contact = () => {
             prefix="Reach Out Let’s"
             highlight="Collaborate"
           />
-          <StatsSection className="my-15 md:my-37.5" />
+          <ContactSection />
+          <StatsSection className="my-15 md:my-25 lg:my-37.5" />
         </RadialBackground>
       </RadialBackground>
     </main>

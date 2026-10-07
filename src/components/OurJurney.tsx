@@ -6,7 +6,7 @@ export const OurJurney = () => {
   const ourJurney = INTRO_SECTION.ourJurney;
 
   return (
-    <article className="w-full max-w-7xl px-5 mx-auto relative hidden lg:block">
+    <article className="w-full max-w-330 px-5 mx-auto relative hidden lg:block">
       <IntroSection
         title={ourJurney.title}
         description={ourJurney.description}

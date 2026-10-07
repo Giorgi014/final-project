@@ -45,7 +45,7 @@ export const MobileMenu = ({ isOpen }: MobileMenuProps) => {
         </nav>
       </div>
       <div className="w-full max-w-sm flex justify-center pt-6">
-        <Button>Get in Touch</Button>
+        <Button variant="button">Get in Touch</Button>
       </div>
     </div>
   );

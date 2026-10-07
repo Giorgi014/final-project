@@ -5,7 +5,7 @@ import { FutureCard } from "./ui";
 export const FuturedProject = () => {
   const futuredProjects = INTRO_SECTION.futuredProjects;
   return (
-    <article className="w-full max-w-7xl px-5 mx-auto">
+    <article className="w-full max-w-330 px-5 mx-auto">
       <IntroSection
         title={futuredProjects.title}
         description={futuredProjects.description}

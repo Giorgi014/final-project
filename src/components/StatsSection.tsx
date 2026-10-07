@@ -4,7 +4,7 @@ import { LeftDots, RightDots } from "@/assets";
 export const StatsSection = ({ className }: { className?: string }) => {
   return (
     <section
-      className={`w-full grid grid-cols-2 lg:flex lg:justify-between items-center max-w-7xl gap-5 px-5 mt-5.75 mx-auto ${className}`}
+      className={`w-full grid grid-cols-2 lg:flex lg:justify-between items-center max-w-330 gap-5 px-5 mt-5.75 mx-auto ${className}`}
     >
       <img src={RightDots} alt="" className="hidden lg:block" />
       {STATS_SECTION.stats.map((stats) => (

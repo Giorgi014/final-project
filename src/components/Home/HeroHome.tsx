@@ -26,7 +26,7 @@ export const HeroHome = () => {
             {HERO.description}
           </p>
           <div className="w-full flex flex-col min-[400px]:flex-row justify-center sm:justify-start items-center gap-6 mt-10">
-            <Button>{btns.primary.label}</Button>
+            <Button variant="button">{btns.primary.label}</Button>
             <Link
               to={btns.secondary.href}
               className="flex justify-center items-center gap-3 text-base text-[clamp(16px,2vw,20px)] font-comfortaa-semiBold leading-6 whitespace-nowrap"

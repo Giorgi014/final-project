@@ -9,9 +9,9 @@ type HeroProps = {
 
 export const Hero = ({ image, prefix, highlight, suffix }: HeroProps) => {
   return (
-    <article className="w-full flex justify-center items-center max-w-7xl px-5 mt-15 md:mt-25 mx-auto relative">
+    <article className="w-full flex justify-center items-center max-w-330 px-5 mt-15 md:mt-25 mx-auto relative">
       <img src={image} alt="" className="absolute top-z-[-1] w-full px-5" />
-      <section className="mx-auto max-w-7xl text-center flex justify-center items-center gap-5 z-10">
+      <section className="mx-auto max-w-330 text-center flex justify-center items-center gap-5 z-10">
         <img
           src={LeftDots}
           alt=""

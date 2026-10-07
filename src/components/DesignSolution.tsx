@@ -3,7 +3,7 @@ import { SectionTitle, ServiceCard } from "./ui";
 
 export const DesignSolution = () => {
   return (
-    <article className="w-full max-w-7xl px-5 mt-15 sm:mt-25 lg:mt-62.5 mx-auto">
+    <article className="w-full max-w-330 px-5 mt-15 sm:mt-25 lg:mt-62.5 mx-auto">
       <section className="w-full">
         <SectionTitle title="Creative Design Solution" />
         <p className="font-poppins-regular text-[16px] text-secondary w-full max-w-156.5 mt-4 text-center md:text-start mx-auto md:mx-0">

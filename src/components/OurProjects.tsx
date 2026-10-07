@@ -10,7 +10,7 @@ interface OurProjectsProps {
 export const OurProjects = ({ projects }: OurProjectsProps) => {
   const ourProjects = INTRO_SECTION.ourProjects;
   return (
-    <article className="w-full max-w-7xl mx-auto px-5">
+    <article className="w-full max-w-330 mx-auto px-5">
       <IntroSection
         title={ourProjects.title}
         description={ourProjects.description}

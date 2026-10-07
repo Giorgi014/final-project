@@ -1,24 +1,33 @@
+import type { InputProps } from "@/types";
 import { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 
-type InputProps = {
-  label: string;
-  placeholder: string;
-  variant: "email" | "password";
-};
-
-export const Input = ({ label, placeholder, variant }: InputProps) => {
+export const Input = ({
+  label,
+  placeholder,
+  variant,
+  error,
+  ...props
+}: InputProps) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const inputType =
-    variant === "password" ? (isVisible ? "text" : "password") : "email";
+    variant === "password"
+      ? isVisible
+        ? "text"
+        : "password"
+      : variant === "email"
+        ? "email"
+        : "text";
 
   const handleText = () => {
     setIsVisible(!isVisible);
   };
 
   return (
-    <div className="w-full flex justify-center items-center bg-black/20 rounded-3xl py-4 px-6 border border-base/20 relative">
+    <div
+      className={`w-full flex justify-center items-center bg-black/20 rounded-3xl py-4 px-6 border relative ${error ? "border-primary" : "border-base/20"}`}
+    >
       <label htmlFor={variant} className="hidden">
         {label}
       </label>
@@ -27,6 +36,7 @@ export const Input = ({ label, placeholder, variant }: InputProps) => {
         type={inputType}
         placeholder={placeholder}
         className="w-full h-full text-base text-[16px] font-poppins-medium outline-none"
+        {...props}
       />
       {variant === "password" && (
         <button

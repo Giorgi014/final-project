@@ -16,7 +16,10 @@ export const Header = () => {
 
   return (
     <header className="w-full max-w-360 flex justify-between items-center gap-2.5 mt-10 mx-auto xl:mt-15 px-5 xl:px-20">
-      <div className="flex justify-start items-center gap-3 cursor-pointer">
+      <Link
+        to={"/"}
+        className="flex justify-start items-center gap-3 cursor-pointer"
+      >
         <img
           src={Logo}
           alt="Stygar logo"
@@ -25,7 +28,7 @@ export const Header = () => {
         <h1 className="font-jakarta-bold text-[clamp(24px,4vw,36px)] text-primary">
           Stygar
         </h1>
-      </div>
+      </Link>
 
       <nav className="hidden lg:block">
         <ul className="flex items-center gap-6">
@@ -46,7 +49,7 @@ export const Header = () => {
       </nav>
 
       <div className="hidden lg:block">
-        <Button>Get in Touch</Button>
+        <Button variant="button">Get in Touch</Button>
       </div>
 
       {isOpen ? (

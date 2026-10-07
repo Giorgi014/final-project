@@ -10,7 +10,7 @@ export const Footer = () => {
     <footer className="w-full relative">
       <FooterDivider variant="start" />
       <article className="w-full px-5 py-5 md:py-10">
-        <section className="w-full max-w-7xl flex flex-col justify-start items-center md:flex-row md:justify-between md:items-start gap-5 mx-auto">
+        <section className="w-full max-w-330 flex flex-col justify-start items-center md:flex-row md:justify-between md:items-start gap-5 mx-auto">
           <div className="w-full max-w-187.25">
             <div className="flex justify-start items-center gap-3 cursor-pointer">
               <img
@@ -70,7 +70,7 @@ export const Footer = () => {
       </article>
       <FooterDivider variant="end" />
       <article className="w-full px-5 py-5 md:py-10">
-        <section className="w-full flex flex-col justify-between items-start sm:flex-row gap-y-2.5 sm:items-center max-w-7xl font-poppins-medium text-[16px] text-secondary leading-6 mx-auto">
+        <section className="w-full flex flex-col justify-between items-start sm:flex-row gap-y-2.5 sm:items-center max-w-330 font-poppins-medium text-[16px] text-secondary leading-6 mx-auto">
           <div className="flex justify-start items-center gap-1">
             <p>Privacy Policy</p>
             <p>• Disclimer</p>

@@ -9,7 +9,7 @@ const Auth = () => {
   return (
     <main className="pt-3.75 overflow-x-hidden">
       <RadialBackground position="30% 70%">
-        <article className="w-full max-w-7xl px-5 my-10 md:my-15 xl:my-30 flex justify-between items-center gap-5 mx-auto">
+        <article className="w-full max-w-330 px-5 my-10 md:my-15 xl:my-30 flex justify-between items-center gap-5 mx-auto">
           <img
             src={HeroCharacterAlt}
             alt=""

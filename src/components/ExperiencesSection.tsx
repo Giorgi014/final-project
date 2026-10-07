@@ -33,7 +33,7 @@ export const ExperiencesSection = () => {
   } = useInfiniteCarousel(TOTAL);
 
   return (
-    <article className="w-full max-w-7xl px-5 mx-auto mt-15 md:mt-37.5">
+    <article className="w-full max-w-330 px-5 mx-auto mt-15 md:mt-37.5">
       <SectionTitle title="Experiences That Inspire" />
       <section className="w-full max-w-175 flex justify-between items-center mt-15 mb-12 mx-auto">
         {images.map((_, index) => {

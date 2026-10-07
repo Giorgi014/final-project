@@ -3,7 +3,7 @@ import { LuMoveRight } from "react-icons/lu";
 
 export const CtaSection = () => {
   return (
-    <article className="w-full max-w-7xl px-5 mx-auto mt-50 md:mt-62.5 mb-20">
+    <article className="w-full max-w-330 px-5 mx-auto mt-50 md:mt-62.5 mb-20">
       <section className="w-full flex flex-col-reverse items-center justify-start md:flex-row md:justify-between md:items-center bg-base/20 rounded-3xl p-7.5 border-2 border-base/20">
         <div className="max-w-156.5 text-center md:text-start">
           <h2 className="w-full font-comfortaa-bold text-[clamp(32px,6vw,64px)] text-base leading-19 tracking-[-0.8px]">

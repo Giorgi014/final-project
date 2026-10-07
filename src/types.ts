@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { ComponentPropsWithRef, ReactNode } from "react";
 
 export type Navigation = {
   id: number;
@@ -26,4 +26,11 @@ export type NumberedInfoCardProps = {
   description?: string;
   className?: string;
   active?: boolean;
+};
+
+export type InputProps = Omit<ComponentPropsWithRef<"input">, "type"> & {
+  label: string;
+  placeholder: string;
+  error?: string;
+  variant: "text" | "email" | "password";
 };

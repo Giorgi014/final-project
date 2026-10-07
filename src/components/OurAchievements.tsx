@@ -4,7 +4,7 @@ import { NumberedInfoCard, SectionTitle } from "./ui";
 
 export const OurAchievements = () => {
   return (
-    <article className="w-full max-w-7xl px-5 mx-auto mt-15 md:mt-37.5">
+    <article className="w-full max-w-330 px-5 mx-auto mt-15 md:mt-37.5">
       <div className="w-full md:flex justify-between items-start gap-5 mb-15">
         <SectionTitle title={ACHIEVEMENTS_SECTION.title} />
         <p className="font-poppins-regular text-[16px] text-secondary leading-6 w-full text-center md:text-start md:w-[clamp(300px,40vw,625px)]">

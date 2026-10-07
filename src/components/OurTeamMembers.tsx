@@ -3,7 +3,7 @@ import { CornerFrame, OutlinedHeading, SectionTitle } from "./ui";
 
 export const OurTeamMembers = () => {
   return (
-    <article className="w-full max-w-7xl px-5 mx-auto mt-15 md:mt-37.5">
+    <article className="w-full max-w-330 px-5 mx-auto mt-15 md:mt-37.5">
       <SectionTitle title={OUR_TEAM_SECTION.title} />
       <section className="w-full mt-15">
         {OUR_TEAM_SECTION.members.map((memb, index) => (
