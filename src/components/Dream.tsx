@@ -13,7 +13,7 @@ export const Dream = () => {
       </section>
       <section className="mt-15 grid sm:grid-cols-[repeat(2,auto)] lg:grid-cols-[repeat(3,auto)] justify-center md:justify-between gap-5 gap-y-10">
         {ABOUT_SERVICE_CARDS.map((service) => (
-          <ServiceCard key={service.title} {...service} />
+          <ServiceCard key={service.id} {...service} />
         ))}
       </section>
     </article>

@@ -12,9 +12,9 @@ export const DesignSolution = () => {
           Bianca pesto roll onions.
         </p>
       </section>
-      <section className="mt-15 grid sm:grid-cols-[repeat(2,auto)] lg:grid-cols-[repeat(3,auto)] justify-center md:justify-between gap-5 gap-y-10">
+      <section className="mt-15 grid sm:grid-cols-[repeat(2,minmax(0,335px))] lg:grid-cols-[repeat(3,minmax(0,335px))] justify-center md:justify-between gap-5 gap-y-10">
         {SERVICE_CARDS.map((service) => (
-          <ServiceCard key={service.title} {...service} />
+          <ServiceCard key={service.id} {...service} />
         ))}
       </section>
     </article>

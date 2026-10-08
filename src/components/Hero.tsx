@@ -1,11 +1,5 @@
 import { LeftDots, RightDots } from "@/assets";
-
-type HeroProps = {
-  image: string;
-  prefix: string;
-  highlight: string;
-  suffix?: string;
-};
+import type { HeroProps } from "@/types";
 
 export const Hero = ({ image, prefix, highlight, suffix }: HeroProps) => {
   return (

@@ -14,6 +14,7 @@ export { IntroSection } from "./IntroSection";
 export { OurProjects } from "./OurProjects";
 export { OurJurney } from "./OurJurney";
 export { OurTeamMembers } from "./OurTeamMembers";
+export { ProjectHero } from "./ProjectHero";
 export { StatsSection } from "./StatsSection";
 export { SignIn } from "./auth/SignIn";
 export { SignUp } from "./auth/SignUp";

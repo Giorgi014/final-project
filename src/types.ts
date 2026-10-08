@@ -34,3 +34,24 @@ export type InputProps = Omit<ComponentPropsWithRef<"input">, "type"> & {
   error?: string;
   variant: "text" | "email" | "password";
 };
+
+export type HeroProps = {
+  image: string;
+  prefix: string;
+  highlight: string;
+  suffix?: string;
+};
+
+export type ServiceCardProps =
+  | {
+      id: number;
+      title: string;
+      description: string;
+      variant: "glass";
+    }
+  | {
+      id: number;
+      title: string;
+      features: string[];
+      variant: "featured";
+    };

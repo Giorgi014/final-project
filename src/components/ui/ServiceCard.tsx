@@ -1,16 +1,5 @@
 import { Frame } from "@/assets";
-
-export type ServiceCardProps =
-  | {
-      title: string;
-      description: string;
-      variant: "glass";
-    }
-  | {
-      title: string;
-      features: string[];
-      variant: "featured";
-    };
+import type { ServiceCardProps } from "@/types";
 
 export const ServiceCard = (props: ServiceCardProps) => {
   return (

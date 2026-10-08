@@ -1,5 +1,5 @@
 import { Cover11, Cover8, Cover7, Cover6, Cover5, Cover4 } from "@/assets";
-import type { ServiceCardProps } from "@/components/ui/ServiceCard";
+import type { ServiceCardProps } from "@/types";
 import type { ProjectContent } from "@/types/home";
 
 const description =
@@ -7,16 +7,19 @@ const description =
 
 export const SERVICE_CARDS: ServiceCardProps[] = [
   {
+    id: 0,
     title: "Web Development",
     description,
     variant: "glass",
   },
   {
+    id: 1,
     title: "Design Process",
     features: ["User Research", "Wireframing", "Prototyping", "Design System"],
     variant: "featured",
   },
   {
+    id: 2,
     title: "Web Development",
     description,
     variant: "glass",
