@@ -6,4 +6,4 @@ export {
   STATS_SECTION,
 } from "./sections";
 export { EXPERIENCES } from "./experiences";
-export { FUTURED_PROJECTS, PROJECTS } from "./projects";
+export { FEATURED_PROJECTS, PROJECTS } from "./projects";

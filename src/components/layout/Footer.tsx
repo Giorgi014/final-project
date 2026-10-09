@@ -1,5 +1,5 @@
 import { Logo } from "@/assets";
-import { CornerFrame, FooterDivider } from "./ui";
+import { CornerFrame, FooterDivider } from "@/components/ui";
 import { TbBrandTelegram } from "react-icons/tb";
 import { FiTwitter } from "react-icons/fi";
 import { RxDiscordLogo } from "react-icons/rx";

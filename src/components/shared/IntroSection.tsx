@@ -6,6 +6,7 @@ export const IntroSection = ({
   title,
   description,
   actionLabel,
+  actionHref,
   onAction,
 }: IntroSectionProps) => {
   return (
@@ -21,9 +22,9 @@ export const IntroSection = ({
           {description}
         </p>
       </div>
-      {actionLabel && (
+      {actionLabel && actionHref && (
         <Link
-          to="/project"
+          to={actionHref}
           onClick={onAction}
           className="bg-transparent py-3 px-8 whitespace-nowrap rounded-3xl border border-base hover:border-primary hover:text-primary transition-colors duration-300 font-comfortaa-medium text-[20px] text-base leading-6 cursor-pointer"
         >

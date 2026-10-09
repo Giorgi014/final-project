@@ -6,7 +6,19 @@ export type {
   TechnologySample,
   TypographySample,
   TypographyTag,
-} from "./types/designSystem";
+} from "./designSystem";
+export type {
+  AchievementsSectionContent,
+  AchievementContent,
+  ExperienceReviewContent,
+  FeaturedProjectContent,
+  HeroContent,
+  IntroSectionsContent,
+  ProjectContent,
+  StatsSectionContent,
+  TeamMemberContent,
+  TeamSectionContent,
+} from "./home";
 
 export type Navigation = {
   id: number;
@@ -25,6 +37,7 @@ export interface IntroSectionProps {
   title: string;
   description: string;
   actionLabel?: string;
+  actionHref?: string;
   onAction?: () => void;
 }
 

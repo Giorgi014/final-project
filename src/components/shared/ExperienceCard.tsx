@@ -1,6 +1,6 @@
 import { FaStar } from "react-icons/fa";
-import type { ExperienceReviewContent } from "@/types/home";
-import { CornerCard } from "./ui";
+import type { ExperienceReviewContent } from "@/types";
+import { CornerCard } from "@/components/ui";
 
 type ExperienceCardProps = Omit<ExperienceReviewContent, "id" | "image"> & {
   isActive?: boolean;

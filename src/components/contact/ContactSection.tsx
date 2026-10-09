@@ -1,5 +1,5 @@
-import { SectionTitle } from "./ui/SectionTitle";
-import { ContactForm } from "./ContactForm";
+import { ContactForm } from "@/components/contact/ContactForm";
+import { SectionTitle } from "@/components/ui";
 
 export const ContactSection = () => {
   return (

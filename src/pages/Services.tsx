@@ -1,14 +1,14 @@
+import { ServicesIllustration } from "@/assets";
 import {
+  AchievementsSection,
   CtaSection,
-  DesignSolution,
+  DesignSolutionsSection,
   ExperiencesSection,
   Hero,
-  OurJurney,
-  OurProjects,
+  JourneySection,
+  ProjectsSection,
   RadialBackground,
 } from "@/components";
-import { ServicesIllustration } from "@/assets";
-import { OurAchievements } from "@/components/OurAchievements";
 import { SERVICE_PROJECTS } from "@/data/services";
 
 const Services = () => {
@@ -22,10 +22,10 @@ const Services = () => {
             highlight="Vision"
             suffix="Into Reality"
           />
-          <DesignSolution />
-          <OurProjects projects={SERVICE_PROJECTS} />
-          <OurJurney />
-          <OurAchievements />
+          <DesignSolutionsSection />
+          <ProjectsSection projects={SERVICE_PROJECTS} />
+          <JourneySection />
+          <AchievementsSection />
           <ExperiencesSection />
           <CtaSection />
         </RadialBackground>

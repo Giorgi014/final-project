@@ -1,8 +1,8 @@
 import { LeftDots, RightDots, Twenty, Twentyfive } from "@/assets";
 import { ACHIEVEMENTS_SECTION } from "@/data/home";
-import { NumberedInfoCard, SectionTitle } from "./ui";
+import { NumberedInfoCard, SectionTitle } from "@/components/ui";
 
-export const OurAchievements = () => {
+export const AchievementsSection = () => {
   return (
     <article className="w-full max-w-330 px-5 mx-auto mt-15 md:mt-37.5">
       <div className="w-full md:flex justify-between items-start gap-5 mb-15">

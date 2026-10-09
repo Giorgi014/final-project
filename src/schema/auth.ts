@@ -1,11 +1,5 @@
 import { z } from "zod";
-
-const nameSchema = z.string().trim().min(1, "Full name is required");
-
-const emailSchema = z
-  .string()
-  .min(1, "Email is required")
-  .pipe(z.email("Invalid email format"));
+import { emailSchema } from "./common";
 
 const passwordSchema = z
   .string()
@@ -30,12 +24,5 @@ export const signUpSchema = z
     path: ["repeatPassword"],
   });
 
-export const contactSchema = z.object({
-  fullName: nameSchema,
-  email: emailSchema,
-  discussion: z.string().trim().min(1, "Discussion is required"),
-});
-
 export type SignInValues = z.infer<typeof signInSchema>;
 export type SignUpValues = z.infer<typeof signUpSchema>;
-export type ContactValues = z.infer<typeof contactSchema>;

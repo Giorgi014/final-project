@@ -5,7 +5,7 @@ import type {
   IntroSectionsContent,
   StatsSectionContent,
   TeamSectionContent,
-} from "@/types/home";
+} from "@/types";
 
 export const HERO: HeroContent = {
   title: {
@@ -41,14 +41,16 @@ export const INTRO_SECTION: IntroSectionsContent = {
     description:
       "Pizza ipsum dolor meat lovers buffalo. Extra broccoli parmesan ricotta garlic dolor sauce marinara Chicago marinara. Tomato dolor pesto pesto Bianca pesto roll onions.",
     actionLabel: "Show All",
+    actionHref: "/project",
   },
-  futuredProjects: {
+  featuredProjects: {
     title: "Futured Projects",
     description:
       "Pizza ipsum dolor meat lovers buffalo. Extra broccoli parmesan ricotta garlic dolor sauce marinara Chicago marinara. Tomato dolor pesto pesto Bianca pesto roll onions.",
     actionLabel: "Show All",
+    actionHref: "/project",
   },
-  ourJurney: {
+  ourJourney: {
     title: "Our Jurney",
     description:
       "Pizza ipsum dolor meat lovers buffalo. Extra broccoli parmesan ricotta garlic dolor sauce marinara Chicago marinara. Tomato dolor pesto pesto Bianca pesto roll onions.",

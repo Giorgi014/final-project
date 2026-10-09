@@ -4,8 +4,8 @@ import {
   FONTS,
   LANGUAGES,
   TYPOGRAPHY,
-} from "@/data/designSystem";
-import { DesignSystemCard, IconRow, SectionTitle } from "./ui";
+} from "@/data/project";
+import { DesignSystemCard, IconRow, SectionTitle } from "@/components/ui";
 
 const ICON_SIZE = "size-[clamp(32px,5vw,56px)]";
 

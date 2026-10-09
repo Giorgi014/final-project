@@ -1,5 +1,4 @@
-import { SectionTitle } from "../ui/SectionTitle";
-import { Button, Input } from "../ui";
+import { Button, Input, SectionTitle } from "@/components/ui";
 import { GoogleLogo } from "@/assets";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -88,7 +87,7 @@ export const SignIn = () => {
       <section className="w-full flex flex-col items-center">
         <button
           type="button"
-          className="w-full flex justify-center items-center text-base text-[16px] font-poppins-regular bg-base/6 border border-base/20 leading-6ex rounded-3xl py-3 cursor-pointer"
+          className="w-full flex justify-center items-center text-base text-[16px] font-poppins-regular bg-base/6 border border-base/20 leading-6 rounded-3xl py-3 cursor-pointer"
         >
           <img src={GoogleLogo} alt="" />
           With Google

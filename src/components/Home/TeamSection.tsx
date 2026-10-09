@@ -1,7 +1,7 @@
 import { OUR_TEAM_SECTION } from "@/data/home";
-import { CornerFrame, OutlinedHeading, SectionTitle } from "./ui";
+import { CornerFrame, OutlinedHeading, SectionTitle } from "@/components/ui";
 
-export const OurTeamMembers = () => {
+export const TeamSection = () => {
   return (
     <article className="w-full max-w-330 px-5 mx-auto mt-15 md:mt-37.5">
       <SectionTitle title={OUR_TEAM_SECTION.title} />

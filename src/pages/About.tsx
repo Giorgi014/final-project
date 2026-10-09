@@ -1,13 +1,13 @@
 import { AboutIllustration } from "@/assets";
 import {
   CtaSection,
-  Dream,
+  DreamSection,
   ExperiencesSection,
   Hero,
-  OurJurney,
-  OurTeamMembers,
+  JourneySection,
   RadialBackground,
   StatsSection,
+  TeamSection,
 } from "@/components";
 
 const About = () => {
@@ -21,11 +21,11 @@ const About = () => {
             highlight="Pixels"
             suffix="The"
           />
-          <Dream />
-          <OurJurney />
+          <DreamSection />
+          <JourneySection />
           <StatsSection className="mt-15 md:mt-37.5" />
           <ExperiencesSection />
-          <OurTeamMembers />
+          <TeamSection />
           <CtaSection />
         </RadialBackground>
       </RadialBackground>

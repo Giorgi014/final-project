@@ -1,6 +1,6 @@
 import { EXPERIENCES } from "@/data/home";
-import { ExperienceCard } from "./ExperienceCard";
-import { SectionTitle } from "./ui";
+import { ExperienceCard } from "@/components/shared/ExperienceCard";
+import { SectionTitle } from "@/components/ui";
 import { useInfiniteCarousel } from "@/hooks/useInfiniteCarousel";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 

@@ -9,11 +9,21 @@ import {
   User8,
   User9,
 } from "@/assets";
-import type { ExperienceReviewContent } from "@/types/home";
+import type { ExperienceReviewContent } from "@/types";
 
-const images = [User, User2, User3, User4, User5, User6, User7, User8, User9];
+const images: string[] = [
+  User,
+  User2,
+  User3,
+  User4,
+  User5,
+  User6,
+  User7,
+  User8,
+  User9,
+];
 
-const review = {
+const review: Omit<ExperienceReviewContent, "id" | "image"> = {
   name: "Daniel Carter",
   timeLine: "1 Day ago",
   evaluation: "5.0",

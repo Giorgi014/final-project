@@ -10,7 +10,7 @@ import {
   Cover10,
   Cover11,
 } from "@/assets";
-import type { FutureProjectContent, ProjectContent } from "@/types/home";
+import type { FeaturedProjectContent, ProjectContent } from "@/types";
 
 export const PROJECTS: ProjectContent[] = [
   { image: Cover, title: "Berkshire Hathaway", category: "App Design" },
@@ -19,7 +19,7 @@ export const PROJECTS: ProjectContent[] = [
   { image: Cover9, title: "Berkshire Hathaway", category: "App Design" },
 ];
 
-export const FUTURED_PROJECTS: FutureProjectContent[] = [
+export const FEATURED_PROJECTS: FeaturedProjectContent[] = [
   CardCover6,
   CardCover5,
   CardCover4,

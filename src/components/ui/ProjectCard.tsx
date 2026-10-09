@@ -1,4 +1,4 @@
-import type { ProjectContent } from "@/types/home";
+import type { ProjectContent } from "@/types";
 
 export const ProjectCard = ({ image, title, category }: ProjectContent) => {
   return (

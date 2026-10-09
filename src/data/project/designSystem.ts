@@ -4,7 +4,7 @@ import type {
   FontSample,
   TechnologySample,
   TypographySample,
-} from "@/types/designSystem";
+} from "@/types";
 
 export const DESIGN_SYSTEM_DESCRIPTION =
   "Pizza ipsum dolor meat lovers buffalo. Extra broccoli parmesan ricotta garlic dolor sauce marinara Chicago marinara. Tomato dolor pesto pesto Bianca pesto roll onions.";

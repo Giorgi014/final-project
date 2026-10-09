@@ -1,75 +1,46 @@
-# React + TypeScript + Vite
+# Stygar
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Stygar is a frontend project built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## Available Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- `npm run dev` — start the development server
+- `npm run build` — run TypeScript checks and create a production build
+- `npm run lint` — run ESLint
+- `npm run preview` — preview the production build locally
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Project Structure
 
+```text
+src/
+├── assets/       # Images, icons, and fonts
+├── components/
+│   ├── about/    # About page components
+│   ├── auth/     # Sign-in and sign-up forms
+│   ├── contact/  # Contact page and form
+│   ├── home/     # Home page components
+│   ├── layout/   # Header, mobile menu, and footer
+│   ├── project/  # Project detail page components
+│   ├── services/ # Services page components
+│   ├── shared/   # Sections reused across pages
+│   └── ui/       # Reusable base UI components
+├── data/
+│   ├── about/    # About page content
+│   ├── home/     # Home page content
+│   ├── project/  # Project detail content
+│   └── services/ # Services page content
+├── hooks/        # React hooks
+├── layouts/      # Shared page layouts
+├── pages/        # Route-level pages
+├── schema/       # Form schemas and validation
+└── types/        # Shared and domain-specific TypeScript types
 ```
+
+The `@/` alias points to the `src/` directory. Components are exported from their feature folders and can also be imported through `@/components`.

@@ -1,9 +1,9 @@
 import { IoMenu, IoClose } from "react-icons/io5";
 import { Button } from "@/components/ui";
 import { Logo } from "@/assets";
-import { navigation } from "@/components/Header/Navigation";
+import { navigation } from "@/components/layout/Header/Navigation";
 import { useState } from "react";
-import { MobileMenu } from "@/components/Header/MobileMenu";
+import { MobileMenu } from "@/components/layout/Header/MobileMenu";
 import { Link, useLocation } from "react-router-dom";
 
 export const Header = () => {

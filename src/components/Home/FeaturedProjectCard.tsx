@@ -1,11 +1,11 @@
 import { Arrow } from "@/assets";
-import type { FutureProjectContent } from "@/types/home";
+import type { FeaturedProjectContent } from "@/types";
 
-export const FutureCard = ({
+export const FeaturedProjectCard = ({
   image,
   title,
   description,
-}: FutureProjectContent) => {
+}: FeaturedProjectContent) => {
   return (
     <div className="w-full max-w-83.75 rounded-3xl border-2 border-base/80">
       <img src={image} alt={`${title} project preview`} className="w-full" />

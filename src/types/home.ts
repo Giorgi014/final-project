@@ -28,13 +28,15 @@ export interface IntroSectionsContent {
     title: string;
     description: string;
     actionLabel: string;
+    actionHref: string;
   };
-  futuredProjects: {
+  featuredProjects: {
     title: string;
     description: string;
     actionLabel: string;
+    actionHref: string;
   };
-  ourJurney: {
+  ourJourney: {
     title: string;
     description: string;
   };
@@ -69,7 +71,7 @@ export interface ProjectContent {
   category: string;
 }
 
-export interface FutureProjectContent {
+export interface FeaturedProjectContent {
   image: string;
   title: string;
   description: string;

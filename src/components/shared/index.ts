@@ -1,0 +1,9 @@
+export { AchievementsSection } from "./AchievementsSection";
+export { CtaSection } from "./CtaSection";
+export { ExperienceCard } from "./ExperienceCard";
+export { ExperiencesSection } from "./ExperiencesSection";
+export { Hero } from "./Hero";
+export { IntroSection } from "./IntroSection";
+export { JourneySection } from "./JourneySection";
+export { ProjectsSection } from "./ProjectsSection";
+export { StatsSection } from "./StatsSection";

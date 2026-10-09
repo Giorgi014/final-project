@@ -1,7 +1,7 @@
 import { SERVICE_CARDS } from "@/data/services";
-import { SectionTitle, ServiceCard } from "./ui";
+import { SectionTitle, ServiceCard } from "@/components/ui";
 
-export const DesignSolution = () => {
+export const DesignSolutionsSection = () => {
   return (
     <article className="w-full max-w-330 px-5 mt-15 sm:mt-25 lg:mt-62.5 mx-auto">
       <section className="w-full">

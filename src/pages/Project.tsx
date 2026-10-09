@@ -2,9 +2,9 @@ import {
   CtaSection,
   DesignSystemSection,
   ExperiencesSection,
-  OurJurney,
-  OverviewSection,
+  JourneySection,
   ProjectHero,
+  ProjectOverviewSection,
   RadialBackground,
 } from "@/components";
 
@@ -14,8 +14,8 @@ const Project = () => {
       <RadialBackground position="100% 50%">
         <RadialBackground position="10% 130%">
           <ProjectHero />
-          <OverviewSection />
-          <OurJurney />
+          <ProjectOverviewSection />
+          <JourneySection />
           <DesignSystemSection />
           <ExperiencesSection />
           <CtaSection />

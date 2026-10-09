@@ -1,7 +1,7 @@
-import { contactSchema, type ContactValues } from "@/schema/auth";
+import { contactSchema, type ContactValues } from "@/schema/contact";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { Button, Input } from "./ui";
+import { Button, Input } from "@/components/ui";
 
 export const ContactForm = () => {
   const {

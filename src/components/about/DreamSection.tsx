@@ -1,7 +1,7 @@
-import { ABOUT_SERVICE_CARDS } from "@/data/about/about";
-import { SectionTitle, ServiceCard } from "./ui";
+import { ABOUT_SERVICE_CARDS } from "@/data/about";
+import { SectionTitle, ServiceCard } from "@/components/ui";
 
-export const Dream = () => {
+export const DreamSection = () => {
   return (
     <article className="w-full max-w-330 px-5 mt-15 sm:mt-25 lg:mt-62.5 mx-auto">
       <section className="w-full flex flex-col md:flex-row justify-between items-center gap-5">
