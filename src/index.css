@@ -133,9 +133,15 @@
 @theme {
   /* ================================ COLORS ================================ */
   --color-primary: #c70e1a;
+  --color-red-alert: #e80000;
+  --color-red-deep: #a91414;
   --color-crimson: #720109;
   --color-secondary: #d3d3d3;
   --color-soft-gray: #e4e4e4;
+  --color-light-gray: #eaeaea;
+  --color-silver: #cdcdcd;
+  --color-mist: #939393;
+  --color-slate: #c4c4c4;
   --color-base: #ffffff;
   --color-black: #000000;
   --color-accent: #f4a03b;

@@ -1,5 +1,13 @@
 import type { ComponentPropsWithRef, ReactNode } from "react";
 
+export type {
+  DesignSystemColor,
+  FontSample,
+  TechnologySample,
+  TypographySample,
+  TypographyTag,
+} from "./types/designSystem";
+
 export type Navigation = {
   id: number;
   page: string;
