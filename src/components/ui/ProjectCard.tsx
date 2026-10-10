@@ -1,6 +1,6 @@
 import type { ProjectContent } from "@/types";
 
-export const ProjectCard = ({ image, title, category }: ProjectContent) => {
+export const ProjectCard = ({ image, title, description }: ProjectContent) => {
   return (
     <div className="w-full max-w-155 rounded-3xl cursor-pointer relative mx-auto">
       <img src={image} alt={`${title} project preview`} className="w-full" />
@@ -9,7 +9,7 @@ export const ProjectCard = ({ image, title, category }: ProjectContent) => {
           {title}
         </h2>
         <p className="text-[12px] font-poppins-medium text-soft-gray">
-          {category}
+          {description}
         </p>
       </div>
     </div>

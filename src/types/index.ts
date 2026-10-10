@@ -76,3 +76,8 @@ export type ServiceCardProps =
       features: string[];
       variant: "featured";
     };
+
+export type NavigationDisplay = {
+  id: number;
+  category: string;
+};

@@ -4,6 +4,7 @@ export * from "./contact";
 export * from "./home";
 export * from "./layout";
 export * from "./project";
+export * from "./portfolio";
 export * from "./services";
 export * from "./shared";
 export * from "./ui";

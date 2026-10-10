@@ -1,0 +1,1 @@
+export { InovationDisplay } from "./InovationDisplay";

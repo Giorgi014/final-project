@@ -13,10 +13,10 @@ import {
 import type { FeaturedProjectContent, ProjectContent } from "@/types";
 
 export const PROJECTS: ProjectContent[] = [
-  { image: Cover, title: "Berkshire Hathaway", category: "App Design" },
-  { image: Cover11, title: "Berkshire Hathaway", category: "App Design" },
-  { image: Cover10, title: "Berkshire Hathaway", category: "App Design" },
-  { image: Cover9, title: "Berkshire Hathaway", category: "App Design" },
+  { image: Cover, title: "Berkshire Hathaway", description: "App Design" },
+  { image: Cover11, title: "Berkshire Hathaway", description: "App Design" },
+  { image: Cover10, title: "Berkshire Hathaway", description: "App Design" },
+  { image: Cover9, title: "Berkshire Hathaway", description: "App Design" },
 ];
 
 export const FEATURED_PROJECTS: FeaturedProjectContent[] = [

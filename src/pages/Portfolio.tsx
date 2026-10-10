@@ -3,6 +3,7 @@ import {
   CtaSection,
   ExperiencesSection,
   Hero,
+  InovationDisplay,
   RadialBackground,
   StatsSection,
 } from "@/components";
@@ -18,6 +19,7 @@ const Portfolio = () => {
             highlight="Creative"
             suffix="World"
           />
+          <InovationDisplay />
           <StatsSection className="mt-15 md:mt-37.5" />
           <ExperiencesSection />
           <CtaSection />

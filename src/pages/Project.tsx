@@ -5,8 +5,10 @@ import {
   JourneySection,
   ProjectHero,
   ProjectOverviewSection,
+  ProjectsSection,
   RadialBackground,
 } from "@/components";
+import { RELATED_PROJECTS } from "@/data/project";
 
 const Project = () => {
   return (
@@ -18,6 +20,11 @@ const Project = () => {
           <JourneySection />
           <DesignSystemSection />
           <ExperiencesSection />
+          <ProjectsSection
+            title="Related Project"
+            projects={RELATED_PROJECTS}
+            isAction={false}
+          />
           <CtaSection />
         </RadialBackground>
       </RadialBackground>

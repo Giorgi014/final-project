@@ -5,17 +5,23 @@ import { ProjectCard } from "@/components/ui";
 
 interface ProjectsSectionProps {
   projects: ProjectContent[];
+  title?: string;
+  isAction?: boolean;
 }
 
-export const ProjectsSection = ({ projects }: ProjectsSectionProps) => {
+export const ProjectsSection = ({
+  projects,
+  title,
+  isAction = true,
+}: ProjectsSectionProps) => {
   const ourProjects = INTRO_SECTION.ourProjects;
   return (
     <article className="w-full max-w-330 mx-auto px-5">
       <IntroSection
-        title={ourProjects.title}
+        title={title ?? ourProjects.title}
         description={ourProjects.description}
-        actionLabel={ourProjects.actionLabel}
-        actionHref={ourProjects.actionHref}
+        actionLabel={isAction ? ourProjects.actionLabel : undefined}
+        actionHref={isAction ? ourProjects.actionHref : undefined}
       />
       <section className="w-full grid grid-cols-1 md:grid-cols-2 gap-10 mt-15">
         {projects.map((project) => (

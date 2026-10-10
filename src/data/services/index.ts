@@ -35,5 +35,5 @@ export const SERVICE_PROJECTS: ProjectContent[] = [
 ].map((image) => ({
   image,
   title: "Berkshire Hathaway",
-  category: "App Design",
+  description: "App Design",
 }));

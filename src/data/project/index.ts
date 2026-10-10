@@ -5,3 +5,5 @@ export {
   LANGUAGES,
   TYPOGRAPHY,
 } from "./designSystem";
+
+export { RELATED_PROJECTS } from "./relatedProjects";

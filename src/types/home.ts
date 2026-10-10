@@ -68,7 +68,7 @@ export interface AchievementsSectionContent {
 export interface ProjectContent {
   image: string;
   title: string;
-  category: string;
+  description: string;
 }
 
 export interface FeaturedProjectContent {
