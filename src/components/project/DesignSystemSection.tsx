@@ -55,7 +55,13 @@ export const DesignSystemSection = () => {
         <DesignSystemCard title="Language">
           <IconRow>
             {LANGUAGES.map(({ src, name }) => (
-              <img key={name} src={src} alt={name} className={ICON_SIZE} />
+              <img
+                key={name}
+                src={src}
+                alt={name}
+                loading="lazy"
+                className={ICON_SIZE}
+              />
             ))}
           </IconRow>
         </DesignSystemCard>

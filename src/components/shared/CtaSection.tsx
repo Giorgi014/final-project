@@ -32,6 +32,9 @@ export const CtaSection = () => {
         <img
           src={HeroCharacter}
           alt=""
+          width={364}
+          height={573}
+          loading="lazy"
           className="w-full max-w-85 md:w-[clamp(200px,35vw,365px)] translate-y-[-35%]"
         />
       </section>

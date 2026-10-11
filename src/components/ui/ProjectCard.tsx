@@ -3,7 +3,14 @@ import type { ProjectContent } from "@/types";
 export const ProjectCard = ({ image, title, description }: ProjectContent) => {
   return (
     <div className="w-full max-w-155 rounded-3xl cursor-pointer relative mx-auto">
-      <img src={image} alt={`${title} project preview`} className="w-full" />
+      <img
+        src={image}
+        alt={`${title} project preview`}
+        width={620}
+        height={314}
+        loading="lazy"
+        className="w-full"
+      />
       <div className="absolute bottom-7 left-6">
         <h2 className="text-2xl font-comfortaa-semiBold text-base leading-7.5 tracking-[-0.15px]">
           {title}

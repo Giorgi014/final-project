@@ -15,6 +15,9 @@ export const TeamSection = () => {
               <img
                 src={memb.image}
                 alt={`Portrait of ${memb.member}`}
+                width={84}
+                height={84}
+                loading="lazy"
                 className="w-[clamp(42px,10vw,84px)] h-[clamp(42px,10vw,84px)] rounded-full"
               />
               <CornerFrame className="w-full" active={index === 0}>

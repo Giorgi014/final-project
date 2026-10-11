@@ -39,6 +39,9 @@ export const HeroHome = () => {
         <img
           src={HeroCharacter}
           alt="Illustration of a smiling person"
+          width={364}
+          height={573}
+          fetchPriority="high"
           className="w-full max-w-85 sm:w-[clamp(200px,35vw,366px)] mx-auto sm:mx-0"
         />
       </section>

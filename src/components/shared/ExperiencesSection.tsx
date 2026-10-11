@@ -62,6 +62,9 @@ export const ExperiencesSection = () => {
               <img
                 src={images[imageIndex]}
                 alt=""
+                width={44}
+                height={44}
+                loading="lazy"
                 className="size-full object-cover"
               />
             </button>

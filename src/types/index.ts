@@ -81,3 +81,10 @@ export type NavigationDisplay = {
   id: number;
   category: string;
 };
+
+export type ButtonProps = {
+  children: React.ReactNode;
+  className?: string;
+  navigation?: string;
+  variant: "button" | "submit";
+};

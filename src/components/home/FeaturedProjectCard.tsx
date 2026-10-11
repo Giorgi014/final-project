@@ -8,7 +8,14 @@ export const FeaturedProjectCard = ({
 }: FeaturedProjectContent) => {
   return (
     <div className="w-full max-w-83.75 rounded-3xl border-2 border-base/80">
-      <img src={image} alt={`${title} project preview`} className="w-full" />
+      <img
+        src={image}
+        alt={`${title} project preview`}
+        width={335}
+        height={235}
+        loading="lazy"
+        className="w-full"
+      />
       <div className="backdrop-blur-xl p-6 rounded-b-3xl">
         <h2 className="text-[20px] text-base font-comfortaa-bold leading-6">
           {title}

@@ -7,7 +7,7 @@ const ErrorPage = () => {
       <RadialBackground position="50% 50%">
         <img
           src={ErrorIllustration}
-          alt=""
+          alt="Page not found"
           className="w-full max-w-232.25 px-5 mx-auto"
         />
       </RadialBackground>
