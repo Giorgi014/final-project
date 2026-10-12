@@ -15,14 +15,14 @@ export const HeroHome = () => {
         alt=""
         className="absolute w-full right-0 z-[-1]"
       />
-      <section className="w-full max-w-302.5 flex flex-col justify-between items-center sm:flex-row sm:items-center mt-15 md:mt-25 px-5">
+      <section className="w-full max-w-302.5 flex flex-col justify-between items-center sm:flex-row sm:items-center mt-5 sm:mt-15 md:mt-25 px-5">
         <div className="w-full max-w-156.5 text-center sm:text-start">
-          <h2 className="font-comfortaa-bold text-[clamp(32px,6vw,64px)] text-base leading-19 tracking-[-0.8px]">
+          <h2 className="font-comfortaa-bold text-[clamp(32px,6vw,64px)] text-base leading-13 sm:leading-19 tracking-[-0.8px]">
             {title.prefix}{" "}
             <span className="text-primary">{title.highlight}</span>{" "}
             {title.suffix}
           </h2>
-          <p className="text-[16px] text-secondary font-poppins-regular leading-6 mt-6">
+          <p className="text-[16px] text-secondary font-poppins-regular leading-6 mt-4 md:mt-6">
             {HERO.description}
           </p>
           <div className="w-full flex flex-col min-[400px]:flex-row justify-center sm:justify-start items-center gap-6 mt-10">

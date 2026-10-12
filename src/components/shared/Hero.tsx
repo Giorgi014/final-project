@@ -16,7 +16,7 @@ export const Hero = ({ image, prefix, highlight, suffix }: HeroProps) => {
           alt=""
           className="w-[clamp(32px,6vw,63px)] -rotate-45 translate-y-[250%]"
         />
-        <h2 className="font-comfortaa-bold text-[clamp(32px,6vw,64px)] text-base leading-15 sm:leading-19 tracking-[-0.8px]">
+        <h2 className="font-comfortaa-bold text-[clamp(32px,6vw,64px)] text-base leading-13 sm:leading-19 tracking-[-0.8px]">
           <span className="block">{prefix}</span>
           <span className="block sm:whitespace-nowrap">
             <span className="text-primary">{highlight}</span> {suffix}

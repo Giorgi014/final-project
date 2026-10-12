@@ -6,10 +6,10 @@ export const CtaSection = () => {
     <article className="w-full max-w-330 px-5 mx-auto mt-50 md:mt-62.5 mb-20">
       <section className="w-full flex flex-col-reverse items-center justify-start md:flex-row md:justify-between md:items-center bg-base/20 rounded-3xl p-7.5 border-2 border-base/20">
         <div className="max-w-156.5 text-center md:text-start">
-          <h2 className="w-full font-comfortaa-bold text-[clamp(32px,6vw,64px)] text-base leading-19 tracking-[-0.8px]">
+          <h2 className="w-full font-comfortaa-bold text-[clamp(32px,6vw,64px)] text-base leading-13 sm:leading-19 tracking-[-0.8px]">
             Let’s Build Something <span className="text-primary">Amazing</span>
           </h2>
-          <p className="w-full font-poppins-regular text-[16px] text-secondary mt-6 mb-10">
+          <p className="w-full font-poppins-regular text-[16px] text-secondary mt-4 mb-5 sm:mt-6 sm:mb-10">
             Pizza ipsum dolor meat lovers buffalo. Extra broccoli parmesan
             ricotta garlic dolor sauce marinara Chicago marinara. Tomato dolor
             pesto pesto Bianca pesto roll onions.
@@ -29,13 +29,14 @@ export const CtaSection = () => {
             </button>
           </div>
         </div>
+
         <img
           src={HeroCharacter}
           alt=""
           width={364}
           height={573}
           loading="lazy"
-          className="w-full max-w-85 md:w-[clamp(200px,35vw,365px)] translate-y-[-35%]"
+          className="w-full max-w-85 mb-[-35%] md:mb-0 md:w-[clamp(200px,35vw,365px)] translate-y-[-35%]"
         />
       </section>
     </article>

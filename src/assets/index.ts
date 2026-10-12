@@ -26,7 +26,7 @@ export { default as HeroCharacter } from "./img/happy-avatar.png";
 export { default as HeroCharacterAlt } from "./img/happy-avatar2.png";
 export { default as HeroBackground } from "./img/stygar-bg.svg";
 export { default as HtmlLogo } from "./img/html-logo.svg";
-export { default as JavaScriptLogo } from "./img/js-logo.svg";
+export { default as JavaScriptLogo } from "./img/js-logo.png";
 export { default as Journey } from "./img/journey.svg";
 export { default as Logo } from "./img/stygar.svg";
 export { default as LeftDots } from "./img/left-dots.svg";

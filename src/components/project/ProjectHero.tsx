@@ -9,10 +9,10 @@ export const ProjectHero = () => {
         className="absolute z-[-1] w-full max-w-226 right-0"
       />
       <section className="w-full max-w-156.5 text-center sm:text-start">
-        <h2 className="font-comfortaa-bold text-[clamp(32px,3.5vw,64px)] text-base leading-19">
+        <h2 className="font-comfortaa-bold text-[clamp(32px,3.5vw,64px)] text-base leading-13 sm:leading-19">
           Reimagining <br /> Digital Experience
         </h2>
-        <div className="flex justify-center sm:justify-start items-center text-[16px] font-poppins-regular text-soft-gray leading-6 mt-6">
+        <div className="flex justify-center sm:justify-start items-center text-[16px] font-poppins-regular text-soft-gray leading-6 mt-4 sm:mt-6">
           <p>Nova Tech</p>
           <ul className="list-disc pl-7">
             <li>20-04-25</li>

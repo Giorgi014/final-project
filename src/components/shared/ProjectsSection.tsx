@@ -23,7 +23,7 @@ export const ProjectsSection = ({
         actionLabel={isAction ? ourProjects.actionLabel : undefined}
         actionHref={isAction ? ourProjects.actionHref : undefined}
       />
-      <section className="w-full grid grid-cols-1 md:grid-cols-2 gap-10 mt-15">
+      <section className="w-full grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-10 mt-10 sm:mt-15">
         {projects.map((project) => (
           <ProjectCard key={project.image} {...project} />
         ))}

@@ -19,7 +19,7 @@ export const Button = ({
           : undefined
       }
     >
-      <span className="absolute w-0 h-0 transition-all duration-350 ease-out bg-red-deep rounded-full group-hover:w-56 group-hover:h-56" />
+      <span className="absolute w-0 h-0 transition-all duration-350 ease-out bg-red-deep rounded-full group-hover:w-64.75 group-hover:h-64.75" />
       <span className="relative">{children}</span>
     </button>
   );
