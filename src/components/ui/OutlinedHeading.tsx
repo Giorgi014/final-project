@@ -1,4 +1,4 @@
-import { useId, type ReactNode } from "react";
+import { useId, type CSSProperties, type ReactNode } from "react";
 
 type OutlinedHeadingProps = {
   children: ReactNode;
@@ -34,8 +34,13 @@ export const OutlinedHeading = ({
         </filter>
       </svg>
       <h2
-        className={`font-comfortaa-bold text-[clamp(42px,7vw,83px)] leading-25.25 tracking-[-0.74px] text-base ${className}`}
-        style={{ filter: active ? "none" : `url(#${filterId})` }}
+        data-text={children}
+        className={`relative font-comfortaa-bold text-[clamp(42px,7vw,83px)] leading-25.25 tracking-[-0.74px] transition-colors duration-700 ease-in-out before:content-[attr(data-text)] before:absolute before:inset-0 before:pointer-events-none before:text-base before:transition-opacity before:duration-700 before:ease-in-out before:[filter:var(--ring-filter)] ${
+          active
+            ? "text-base before:opacity-0"
+            : "text-transparent before:opacity-100"
+        } ${className}`}
+        style={{ "--ring-filter": `url(#${filterId})` } as CSSProperties}
       >
         {children}
       </h2>

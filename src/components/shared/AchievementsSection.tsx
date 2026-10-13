@@ -1,8 +1,20 @@
 import { LeftDots, RightDots, Twenty, Twentyfive } from "@/assets";
 import { ACHIEVEMENTS_SECTION } from "@/data/home";
 import { NumberedInfoCard, SectionTitle } from "@/components/ui";
+import { useEffect, useState } from "react";
 
 export const AchievementsSection = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const AllAchievement = ACHIEVEMENTS_SECTION.achievements.length;
+
+  useEffect(() => {
+    const achievement = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % AllAchievement);
+    }, 3000);
+
+    return () => clearInterval(achievement);
+  }, [AllAchievement]);
+
   return (
     <article className="w-full max-w-330 px-5 mx-auto mt-15 md:mt-37.5">
       <div className="w-full md:flex justify-between items-start gap-5 mb-15">
@@ -33,11 +45,11 @@ export const AchievementsSection = () => {
         <div className="w-full md:w-[clamp(250px,40vw,625px)] flex flex-col justify-start items-start gap-7.5 mt-15 md:mt-0">
           {ACHIEVEMENTS_SECTION.achievements.map((achievement, index) => (
             <NumberedInfoCard
-              key={achievement.num}
+              key={achievement.id}
               num={achievement.num}
               title={achievement.title}
               description={achievement.description}
-              active={index === 0}
+              active={index === activeIndex}
             />
           ))}
         </div>

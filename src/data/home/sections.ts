@@ -63,14 +63,33 @@ export const ACHIEVEMENTS_SECTION: AchievementsSectionContent = {
     "Pizza ipsum dolor meat lovers buffalo. Extra broccoli parmesan ricotta garlic dolor sauce marinara Chicago marinara.",
   achievements: [
     {
+      id: 0,
       num: "1",
       title: "Best Digital Agency",
       description:
         "Pizza ipsum dolor meat lovers buffalo. Extra broccoli parmesan.",
     },
-    { num: "2", title: "Innovation Design" },
-    { num: "3", title: "Client Satisfaction Leader" },
-    { num: "4", title: "Growth Company of the Year" },
+    {
+      id: 1,
+      num: "2",
+      title: "Innovation Design",
+      description:
+        "Pizza ipsum dolor meat lovers buffalo. Extra broccoli parmesan.",
+    },
+    {
+      id: 2,
+      num: "3",
+      title: "Client Satisfaction Leader",
+      description:
+        "Pizza ipsum dolor meat lovers buffalo. Extra broccoli parmesan.",
+    },
+    {
+      id: 3,
+      num: "4",
+      title: "Growth Company of the Year",
+      description:
+        "Pizza ipsum dolor meat lovers buffalo. Extra broccoli parmesan.",
+    },
   ],
 };
 

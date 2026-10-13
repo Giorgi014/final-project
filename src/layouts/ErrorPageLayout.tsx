@@ -1,10 +1,11 @@
 import { Outlet } from "react-router-dom";
-import { Header } from "@/components";
+import { Header, ScrollToTop } from "@/components";
 
 const ErrorLayout = () => (
   <>
     <Header />
     <Outlet />
+    <ScrollToTop />
   </>
 );
 

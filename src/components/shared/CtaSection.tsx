@@ -36,7 +36,7 @@ export const CtaSection = () => {
           width={364}
           height={573}
           loading="lazy"
-          className="w-full max-w-85 mb-[-35%] md:mb-0 md:w-[clamp(200px,35vw,365px)] translate-y-[-35%]"
+          className="w-full max-w-85 md:max-w-none mb-[-35%] md:mb-0 md:w-[clamp(200px,35vw,365px)] translate-y-[-35%]"
         />
       </section>
     </article>

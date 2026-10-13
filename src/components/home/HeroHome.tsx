@@ -15,7 +15,7 @@ export const HeroHome = () => {
         alt=""
         className="absolute w-full right-0 z-[-1]"
       />
-      <section className="w-full max-w-302.5 flex flex-col justify-between items-center sm:flex-row sm:items-center mt-5 sm:mt-15 md:mt-25 px-5">
+      <section className="w-full max-w-302.5 flex flex-col justify-between items-center sm:flex-row sm:items-center px-5">
         <div className="w-full max-w-156.5 text-center sm:text-start">
           <h2 className="font-comfortaa-bold text-[clamp(32px,6vw,64px)] text-base leading-13 sm:leading-19 tracking-[-0.8px]">
             {title.prefix}{" "}
@@ -41,8 +41,7 @@ export const HeroHome = () => {
           alt="Illustration of a smiling person"
           width={364}
           height={573}
-          fetchPriority="high"
-          className="w-full max-w-85 sm:w-[clamp(200px,35vw,366px)] mx-auto sm:mx-0"
+          className="w-full max-w-85 sm:max-w-none sm:w-[clamp(200px,35vw,366px)] mx-auto sm:mx-0"
         />
       </section>
     </article>

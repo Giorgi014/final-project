@@ -54,6 +54,7 @@ export interface TeamSectionContent {
 }
 
 export interface AchievementContent {
+  id: number;
   num: string;
   title: string;
   description?: string;

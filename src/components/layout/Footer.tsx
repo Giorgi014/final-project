@@ -46,7 +46,7 @@ export const Footer = () => {
                   Services
                 </p>
               </CornerFrame>
-              <ul className="mt-8.25 font-poppins-medium text-soft-gray flex flex-col gap-y-6 justify-between items-start">
+              <ul className="mt-8.25 font-poppins-medium text-soft-gray flex flex-col gap-y-6 justify-between items-center md:items-start">
                 <li>Web Development</li>
                 <li>UI/UX Design</li>
                 <li>Digital Marketing</li>
@@ -59,7 +59,7 @@ export const Footer = () => {
                   Company
                 </p>
               </CornerFrame>
-              <ul className="mt-8.25 font-poppins-medium text-soft-gray flex flex-col gap-y-6 justify-between items-start">
+              <ul className="mt-8.25 font-poppins-medium text-soft-gray flex flex-col gap-y-6 justify-between items-center md:items-start">
                 <li>About Us</li>
                 <li>Privacy</li>
                 <li>Portfolio</li>

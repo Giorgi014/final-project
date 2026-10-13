@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Footer, Header } from "@/components";
+import { Footer, Header, ScrollToTop } from "@/components";
 
 function App() {
   return (
@@ -7,6 +7,7 @@ function App() {
       <Header />
       <Outlet />
       <Footer />
+      <ScrollToTop />
     </>
   );
 }

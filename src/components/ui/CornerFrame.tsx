@@ -17,19 +17,19 @@ export const CornerFrame = ({
 
   return (
     <div
-      className={`relative flex h-13 min-w-13 items-center justify-center border ${borderColor} px-2 py-1 text-center ${textColor} ${className}`}
+      className={`relative flex h-13 min-w-13 items-center justify-center border ${borderColor} px-2 py-1 text-center ${textColor} transition-colors duration-700 ease-in-out ${className}`}
     >
       <div
-        className={`absolute w-1.5 h-1.5 ${dotColor} rounded-full top-0 left-0 -translate-x-1/2 -translate-y-1/2`}
+        className={`absolute w-1.5 h-1.5 ${dotColor} rounded-full top-0 left-0 -translate-x-1/2 -translate-y-1/2 transition-colors duration-700 ease-in-out`}
       ></div>
       <div
-        className={`absolute w-1.5 h-1.5 ${dotColor} rounded-full top-0 right-0 translate-x-1/2 -translate-y-1/2`}
+        className={`absolute w-1.5 h-1.5 ${dotColor} rounded-full top-0 right-0 translate-x-1/2 -translate-y-1/2 transition-colors duration-700 ease-in-out`}
       ></div>
       <div
-        className={`absolute w-1.5 h-1.5 ${dotColor} rounded-full bottom-0 left-0 -translate-x-1/2 translate-y-1/2`}
+        className={`absolute w-1.5 h-1.5 ${dotColor} rounded-full bottom-0 left-0 -translate-x-1/2 translate-y-1/2 transition-colors duration-700 ease-in-out`}
       ></div>
       <div
-        className={`absolute w-1.5 h-1.5 ${dotColor} rounded-full bottom-0 right-0 translate-x-1/2 translate-y-1/2`}
+        className={`absolute w-1.5 h-1.5 ${dotColor} rounded-full bottom-0 right-0 translate-x-1/2 translate-y-1/2 transition-colors duration-700 ease-in-out`}
       ></div>
       {children}
     </div>

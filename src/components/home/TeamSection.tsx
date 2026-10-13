@@ -1,7 +1,19 @@
 import { OUR_TEAM_SECTION } from "@/data/home";
 import { CornerFrame, OutlinedHeading, SectionTitle } from "@/components/ui";
+import { useEffect, useState } from "react";
 
 export const TeamSection = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const allMembers = OUR_TEAM_SECTION.members.length;
+
+  useEffect(() => {
+    const member = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % allMembers);
+    }, 3000);
+
+    return () => clearInterval(member);
+  }, [allMembers]);
+
   return (
     <article className="w-full max-w-330 px-5 mx-auto mt-15 md:mt-37.5">
       <SectionTitle title={OUR_TEAM_SECTION.title} />
@@ -20,11 +32,13 @@ export const TeamSection = () => {
                 loading="lazy"
                 className="w-[clamp(42px,10vw,84px)] h-[clamp(42px,10vw,84px)] rounded-full"
               />
-              <CornerFrame className="w-full" active={index === 0}>
+              <CornerFrame className="w-full" active={index === activeIndex}>
                 <h3>{memb.member}</h3>
               </CornerFrame>
             </div>
-            <OutlinedHeading active={index === 0}>{memb.role}</OutlinedHeading>
+            <OutlinedHeading active={index === activeIndex}>
+              {memb.role}
+            </OutlinedHeading>
           </div>
         ))}
       </section>

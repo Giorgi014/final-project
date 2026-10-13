@@ -15,8 +15,8 @@ import { PROJECTS } from "@/data/home";
 const Home = () => {
   return (
     <main className="pt-3.75 overflow-x-hidden">
-      <RadialBackground position="100% 50%">
-        <RadialBackground position="10% 130%">
+      <RadialBackground position="100% 40%">
+        <RadialBackground position="0% 130%">
           <HeroHome />
           <StatsSection />
           <ProjectsSection projects={PROJECTS} />
