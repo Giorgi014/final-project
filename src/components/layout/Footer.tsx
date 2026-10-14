@@ -33,10 +33,10 @@ export const Footer = () => {
               <li>5987 Mid Rivers Mall Dr., St. Charles</li>
             </ul>
             <div className="w-full max-w-45.5 py-3 px-4.5 mx-auto md:mx-0 flex justify-between items-center text-2xl text-base bg-base/20 rounded-3xl border-2 border-base/20 mt-6.25">
-              <TbBrandTelegram />
-              <FiTwitter />
-              <RxDiscordLogo />
-              <PiYoutubeLogoLight />
+              <TbBrandTelegram className="hover:text-primary transition-colors duration-300 cursor-pointer" />
+              <FiTwitter className="hover:text-primary transition-colors duration-300 cursor-pointer" />
+              <RxDiscordLogo className="hover:text-primary transition-colors duration-300 cursor-pointer" />
+              <PiYoutubeLogoLight className="hover:text-primary transition-colors duration-300 cursor-pointer" />
             </div>
           </div>
           <div className="w-full max-w-93.25 flex justify-between items-start gap-5">
@@ -47,10 +47,18 @@ export const Footer = () => {
                 </p>
               </CornerFrame>
               <ul className="mt-8.25 font-poppins-medium text-soft-gray flex flex-col gap-y-6 justify-between items-center md:items-start">
-                <li>Web Development</li>
-                <li>UI/UX Design</li>
-                <li>Digital Marketing</li>
-                <li>Brand Strategy</li>
+                <li className="ml-0 hover:ml-2 transition-all duration-300 cursor-pointer">
+                  Web Development
+                </li>
+                <li className="ml-0 hover:ml-2 transition-all duration-300 cursor-pointer">
+                  UI/UX Design
+                </li>
+                <li className="ml-0 hover:ml-2 transition-all duration-300 cursor-pointer">
+                  Digital Marketing
+                </li>
+                <li className="ml-0 hover:ml-2 transition-all duration-300 cursor-pointer">
+                  Brand Strategy
+                </li>
               </ul>
             </div>
             <div>
@@ -60,9 +68,15 @@ export const Footer = () => {
                 </p>
               </CornerFrame>
               <ul className="mt-8.25 font-poppins-medium text-soft-gray flex flex-col gap-y-6 justify-between items-center md:items-start">
-                <li>About Us</li>
-                <li>Privacy</li>
-                <li>Portfolio</li>
+                <li className="ml-0 hover:ml-2 transition-all duration-300 cursor-pointer">
+                  About Us
+                </li>
+                <li className="ml-0 hover:ml-2 transition-all duration-300 cursor-pointer">
+                  Privacy
+                </li>
+                <li className="ml-0 hover:ml-2 transition-all duration-300 cursor-pointer">
+                  Portfolio
+                </li>
               </ul>
             </div>
           </div>

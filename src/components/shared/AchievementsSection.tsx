@@ -5,15 +5,15 @@ import { useEffect, useState } from "react";
 
 export const AchievementsSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const AllAchievement = ACHIEVEMENTS_SECTION.achievements.length;
+  const allAchievement = ACHIEVEMENTS_SECTION.achievements.length;
 
   useEffect(() => {
     const achievement = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % AllAchievement);
+      setActiveIndex((prev) => (prev + 1) % allAchievement);
     }, 3000);
 
     return () => clearInterval(achievement);
-  }, [AllAchievement]);
+  }, [allAchievement]);
 
   return (
     <article className="w-full max-w-330 px-5 mx-auto mt-15 md:mt-37.5">

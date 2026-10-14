@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* ================================ JAKARTA FONT IMPORT ================================ */
 @font-face {
   font-family: "plus-jakarta-sans-semiBold";
   src: url("./assets/fonts/jskarta-sans/PlusJakartaSans-SemiBold.ttf")
@@ -16,6 +17,7 @@
   font-style: normal;
 }
 
+/* ================================ COMFORTAA FONT IMPORT ================================ */
 @font-face {
   font-family: "comfortaa-regular";
   src: url("./assets/fonts/comfortaa/Comfortaa-Regular.ttf") format("truetype");
@@ -44,6 +46,7 @@
   font-style: normal;
 }
 
+/* ================================ POPPINS FONT IMPORT ================================ */
 @font-face {
   font-family: "poppins-regular";
   src: url("./assets/fonts/poppins/Poppins-Regular.ttf") format("truetype");
@@ -99,6 +102,21 @@
   --font-poppins-regular: "poppins-regular", sans-serif;
   --font-poppins-medium: "poppins-medium", sans-serif;
   --font-poppins-semiBold: "poppins-semiBold", sans-serif;
+
+  --animate-loader: loader 2s linear infinite;
+
+  @keyframes loader {
+    0% {
+      border-width: 1em;
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      border-width: 0;
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
 }
 
 * {

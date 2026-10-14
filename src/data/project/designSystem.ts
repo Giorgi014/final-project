@@ -34,7 +34,7 @@ export const TYPOGRAPHY: TypographySample[] = [
 ];
 
 export const FONTS: FontSample[] = [
-  { title: "Primary Font", name: "Sora", className: "font-sora-regular" },
+  { title: "Primary Font", name: "Sora", className: "font-poppins-regular" },
   {
     title: "Secondary Font",
     name: "Poppins",

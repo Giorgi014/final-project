@@ -5,6 +5,7 @@ export { DesignSystemCard } from "./DesignSystemCard";
 export { FooterDivider } from "./FooterDivider";
 export { IconRow } from "./IconRow";
 export { Input } from "./Input";
+export { Loader } from "./Loader";
 export { NumberedInfoCard } from "./NumberedInfoCard";
 export { OutlinedHeading } from "./OutlinedHeading";
 export { ProjectCard } from "./ProjectCard";
