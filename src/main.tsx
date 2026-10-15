@@ -3,7 +3,16 @@ import { createRoot } from "react-dom/client";
 import App from "@/App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorLayout from "./layouts/ErrorPageLayout";
-import { About, Auth, Contact, ErrorPage, Home, Portfolio, Project, Services } from "./pages/lazy";
+import {
+  About,
+  Auth,
+  Contact,
+  ErrorPage,
+  Home,
+  Portfolio,
+  Project,
+  Services,
+} from "./pages/lazy";
 import { Loader } from "./components/ui/Loader";
 import "@/index.css";
 

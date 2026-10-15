@@ -31,10 +31,30 @@ export const HeroHome = () => {
             </Button>
             <Link
               to={btns.secondary.href}
-              className="flex justify-center items-center gap-3 text-base text-[clamp(16px,2vw,20px)] font-comfortaa-semiBold leading-6 whitespace-nowrap"
+              className="group relative flex items-center justify-center gap-3 text-base text-[clamp(16px,2vw,20px)] font-comfortaa-semiBold leading-6 whitespace-nowrap sm:justify-start"
             >
-              {btns.secondary.label}
-              <HiArrowLongRight />
+              <span className="relative">
+                <span className="opacity-0 pointer-events-none">
+                  {btns.secondary.label}
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-0 overflow-hidden [clip-path:inset(0_0_0_0)] transition-[clip-path] duration-300 ease-out group-hover:[clip-path:inset(0_0_0_100%)]"
+                >
+                  {btns.secondary.label}
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-0 overflow-hidden text-primary [clip-path:inset(0_100%_0_0)] transition-[clip-path] duration-300 ease-out group-hover:[clip-path:inset(0_0_0_0)]"
+                >
+                  {btns.secondary.label}
+                </span>
+              </span>
+              <HiArrowLongRight className="relative shrink-0 transition-all duration-200 delay-100 ease-out group-hover:translate-x-1 group-hover:text-primary" />
+              <span
+                aria-hidden="true"
+                className="absolute -bottom-1.5 left-0 h-0.5 w-0 bg-primary transition-[width] duration-300 ease-out group-hover:w-full"
+              />
             </Link>
           </div>
         </div>
