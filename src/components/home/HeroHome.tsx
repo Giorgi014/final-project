@@ -3,29 +3,133 @@ import { HERO } from "@/data/home";
 import { Button } from "@/components/ui";
 import { HiArrowLongRight } from "react-icons/hi2";
 import { HeroBackground, HeroCharacter } from "@/assets";
+import { useRef } from "react";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export const HeroHome = () => {
   const title = HERO.title;
   const btns = HERO.buttons;
 
+  const backgroundRef = useRef<HTMLImageElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const descriptionRef = useRef<HTMLParagraphElement>(null);
+  const buttonsRef = useRef<HTMLDivElement>(null);
+  const characterRef = useRef<HTMLImageElement>(null);
+
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      defaults: {
+        ease: "power3.inOut",
+        duration: 0.8,
+      },
+    });
+
+    tl.fromTo(
+      backgroundRef.current,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        ease: "power2.out",
+      },
+    );
+
+    tl.fromTo(
+      titleRef.current,
+      {
+        y: 45,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        ease: "power3.out",
+      },
+    );
+
+    tl.fromTo(
+      descriptionRef.current,
+      {
+        y: 25,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        ease: "power3.out",
+      },
+      "-=0.3",
+    );
+
+    tl.from(
+      buttonsRef.current?.children ?? [],
+      {
+        y: 20,
+        opacity: 0,
+        stagger: 0.15,
+      },
+      "-=0.3",
+    );
+
+    gsap.to(characterRef.current, {
+      y: -5,
+      duration: 2.5,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      delay: 0.5,
+    });
+
+    tl.fromTo(
+      characterRef.current,
+      {
+        x: 60,
+        y: 20,
+        scale: 0.8,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        y: 0,
+        scale: 1,
+        opacity: 1,
+        duration: 1.6,
+        ease: "power3.out",
+      },
+      "-=0.3",
+    );
+  });
+
   return (
     <article className="w-full flex justify-center items-center">
       <img
+        ref={backgroundRef}
         src={HeroBackground}
         alt=""
         className="absolute w-full right-0 z-[-1]"
       />
       <section className="w-full max-w-302.5 flex flex-col justify-between items-center sm:flex-row sm:items-center px-5">
         <div className="w-full max-w-156.5 text-center sm:text-start">
-          <h2 className="font-comfortaa-bold text-[clamp(32px,6vw,64px)] text-base leading-13 sm:leading-19 tracking-[-0.8px]">
+          <h2
+            ref={titleRef}
+            className="font-comfortaa-bold text-[clamp(32px,6vw,64px)] text-base leading-13 sm:leading-19 tracking-[-0.8px]"
+          >
             {title.prefix}{" "}
             <span className="text-primary">{title.highlight}</span>{" "}
             {title.suffix}
           </h2>
-          <p className="text-[16px] text-secondary font-poppins-regular leading-6 mt-4 md:mt-6">
+          <p
+            ref={descriptionRef}
+            className="text-[16px] text-secondary font-poppins-regular leading-6 mt-4 md:mt-6"
+          >
             {HERO.description}
           </p>
-          <div className="w-full flex flex-col min-[400px]:flex-row justify-center sm:justify-start items-center gap-6 mt-10">
+          <div
+            ref={buttonsRef}
+            className="w-full flex flex-col min-[400px]:flex-row justify-center sm:justify-start items-center gap-6 mt-10"
+          >
             <Button variant="button" navigation="/project">
               {btns.primary.label}
             </Button>
@@ -59,6 +163,7 @@ export const HeroHome = () => {
           </div>
         </div>
         <img
+          ref={characterRef}
           src={HeroCharacter}
           alt="Illustration of a smiling person"
           width={364}
