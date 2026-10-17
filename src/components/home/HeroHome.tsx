@@ -32,8 +32,9 @@ export const HeroHome = () => {
       },
       {
         opacity: 1,
-        ease: "power2.out",
+        ease: "power2.inOut",
       },
+      "-=0.3",
     );
 
     tl.fromTo(
@@ -45,8 +46,9 @@ export const HeroHome = () => {
       {
         y: 0,
         opacity: 1,
-        ease: "power3.out",
+        ease: "power3.inOut",
       },
+      "-=0.3",
     );
 
     tl.fromTo(
@@ -58,7 +60,7 @@ export const HeroHome = () => {
       {
         y: 0,
         opacity: 1,
-        ease: "power3.out",
+        ease: "power3.inOut",
       },
       "-=0.3",
     );
@@ -78,8 +80,8 @@ export const HeroHome = () => {
       duration: 2.5,
       repeat: -1,
       yoyo: true,
-      ease: "sine.inOut",
-      delay: 0.5,
+      ease: "power3.inOut",
+      delay: 0.3,
     });
 
     tl.fromTo(
@@ -96,7 +98,7 @@ export const HeroHome = () => {
         scale: 1,
         opacity: 1,
         duration: 1.6,
-        ease: "power3.out",
+        ease: "power3.inOut",
       },
       "-=0.3",
     );

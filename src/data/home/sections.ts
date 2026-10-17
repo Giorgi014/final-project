@@ -28,10 +28,10 @@ export const HERO: HeroContent = {
 
 export const STATS_SECTION: StatsSectionContent = {
   stats: [
-    { value: "150+", label: "Project Completed" },
-    { value: "98%", label: "Client Satisfaction" },
-    { value: "5+", label: "Years of Experience" },
-    { value: "24/7", label: "Support Available" },
+    { value: 150, suffix: "+", label: "Project Completed" },
+    { value: 98, suffix: "%", label: "Client Satisfaction" },
+    { value: 5, suffix: "+", label: "Years of Experience" },
+    { value: 24, suffix: "/7", label: "Support Available" },
   ],
 };
 

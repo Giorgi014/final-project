@@ -18,7 +18,8 @@ export interface HeroContent {
 
 export interface StatsSectionContent {
   stats: {
-    value: string;
+    value: number;
+    suffix: string;
     label: string;
   }[];
 }

@@ -2,20 +2,47 @@ import { IoMenu } from "react-icons/io5";
 import { Button } from "@/components/ui";
 import { Logo } from "@/assets";
 import { navigation } from "@/components/layout/Header/Navigation";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { MobileMenu } from "@/components/layout/Header/MobileMenu";
 import { Link, useLocation } from "react-router-dom";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
+  const headerRef = useRef<HTMLHeadElement>(null);
+
   const openMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      defaults: {
+        ease: "power3.inOut",
+        duration: 0.8,
+      },
+    });
+
+    tl.fromTo(
+      headerRef.current,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        ease: "power2.out",
+      },
+    );
+  });
+
   return (
-    <header className="w-full max-w-360 flex justify-between items-center gap-2.5 mt-8 md:mt-10 mx-auto xl:mt-15 px-5 xl:px-20">
+    <header
+      ref={headerRef}
+      className="w-full max-w-360 flex justify-between items-center gap-2.5 mt-8 md:mt-10 mx-auto xl:mt-15 px-5 xl:px-20"
+    >
       <Link
         to={"/"}
         className={`flex justify-start items-center gap-3 cursor-pointer transition-opacity duration-700 ease-in-out ${
