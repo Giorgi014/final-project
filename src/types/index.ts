@@ -63,19 +63,21 @@ export type HeroProps = {
   suffix?: string;
 };
 
+type ServiceCardBase = {
+  id: number;
+  title: string;
+  index?: number;
+};
+
 export type ServiceCardProps =
-  | {
-      id: number;
-      title: string;
+  | (ServiceCardBase & {
       description: string;
       variant: "glass";
-    }
-  | {
-      id: number;
-      title: string;
+    })
+  | (ServiceCardBase & {
       features: string[];
       variant: "featured";
-    };
+    });
 
 export type NavigationDisplay = {
   id: number;

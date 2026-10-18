@@ -1,5 +1,9 @@
 import type { NumberedInfoCardProps } from "@/types";
 import { CornerFrame } from "./CornerFrame";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap";
+import { useRef } from "react";
 
 export const NumberedInfoCard = ({
   num,
@@ -8,8 +12,36 @@ export const NumberedInfoCard = ({
   className,
   active = false,
 }: NumberedInfoCardProps) => {
+  const divRef = useRef<HTMLDivElement>(null);
+
+  const isMobile = window.innerWidth < 768;
+
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      divRef.current,
+      {
+        y: 50,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: divRef.current,
+          start: isMobile ? "top 75%" : "top 85%",
+          once: true,
+        },
+      },
+    );
+  });
+
   return (
-    <div className={`flex justify-start items-start gap-4 ${className}`}>
+    <div
+      ref={divRef}
+      className={`flex justify-start items-start gap-4 ${className}`}
+    >
       <CornerFrame active={active}>
         <p className="font-jakarta-semiBold text-[28px] leading-[100%]">
           {num}

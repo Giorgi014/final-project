@@ -71,12 +71,14 @@ export interface ProjectContent {
   image: string;
   title: string;
   description: string;
+  index?: number;
 }
 
 export interface FeaturedProjectContent {
   image: string;
   title: string;
   description: string;
+  index?: number;
 }
 
 export interface ExperienceReviewContent {

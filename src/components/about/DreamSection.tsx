@@ -12,8 +12,8 @@ export const DreamSection = () => {
         </p>
       </section>
       <section className="mt-15 grid sm:grid-cols-[repeat(2,auto)] lg:grid-cols-[repeat(3,auto)] justify-center md:justify-between gap-5 gap-y-10">
-        {ABOUT_SERVICE_CARDS.map((service) => (
-          <ServiceCard key={service.id} {...service} />
+        {ABOUT_SERVICE_CARDS.map((service, index) => (
+          <ServiceCard key={service.id} index={index} {...service} />
         ))}
       </section>
     </article>

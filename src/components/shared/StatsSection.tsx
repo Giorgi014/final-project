@@ -24,7 +24,7 @@ export const StatsSection = ({ className }: { className?: string }) => {
         ease: "power3.inOut",
         scrollTrigger: {
           trigger: el,
-          start: "top 90%",
+          start: "top 95%",
           once: true,
         },
         onUpdate: () => {

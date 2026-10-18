@@ -1,8 +1,49 @@
 import type { ProjectContent } from "@/types";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export const ProjectCard = ({ image, title, description }: ProjectContent) => {
+export const ProjectCard = ({
+  image,
+  title,
+  description,
+  index = 0,
+}: ProjectContent) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const isMobile = window.innerWidth < 768;
+
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      cardRef.current,
+      {
+        y: 20,
+        scale: 0.8,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        scale: 1,
+        opacity: 1,
+        ease: "power3.inOut",
+        delay: isMobile ? (index % 1) * 0.15 : (index % 2) * 0.15,
+        scrollTrigger: {
+          trigger: cardRef.current,
+          start: isMobile ? "top 95%" : "top 85%",
+          once: true,
+        },
+      },
+    );
+  });
+
   return (
-    <div className="group w-full max-w-155 rounded-3xl cursor-pointer relative mx-auto overflow-hidden">
+    <div
+      ref={cardRef}
+      className="group w-full max-w-155 rounded-3xl cursor-pointer relative mx-auto overflow-hidden"
+    >
       <img
         src={image}
         alt={`${title} project preview`}

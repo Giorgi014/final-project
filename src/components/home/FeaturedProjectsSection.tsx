@@ -13,8 +13,8 @@ export const FeaturedProjectsSection = () => {
         actionHref={featuredProjects.actionHref}
       />
       <section className="w-full grid sm:grid-cols-[repeat(2,auto)] lg:grid-cols-[repeat(3,auto)] justify-center md:justify-between gap-5 gap-y-5 sm:gap-y-10 mt-15">
-        {FEATURED_PROJECTS.map((project) => (
-          <FeaturedProjectCard key={project.image} {...project} />
+        {FEATURED_PROJECTS.map((project, index) => (
+          <FeaturedProjectCard key={project.image} index={index} {...project} />
         ))}
       </section>
     </article>

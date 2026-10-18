@@ -1,11 +1,21 @@
 import { LeftDots, RightDots, Twenty, Twentyfive } from "@/assets";
 import { ACHIEVEMENTS_SECTION } from "@/data/home";
 import { NumberedInfoCard, SectionTitle } from "@/components/ui";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap";
 
 export const AchievementsSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const allAchievement = ACHIEVEMENTS_SECTION.achievements.length;
+  const paragraphRef = useRef<HTMLParagraphElement>(null);
+  const imgOneRef = useRef<HTMLDivElement>(null);
+  const imgTwoRef = useRef<HTMLDivElement>(null);
+
+  const isMobile = window.innerWidth < 768;
+
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
 
   useEffect(() => {
     const achievement = setInterval(() => {
@@ -15,17 +25,75 @@ export const AchievementsSection = () => {
     return () => clearInterval(achievement);
   }, [allAchievement]);
 
+  useGSAP(() => {
+    gsap.fromTo(
+      paragraphRef.current,
+      {
+        x: -30,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        delay: 0.35,
+        ease: "power3.inOut",
+        scrollTrigger: {
+          trigger: paragraphRef.current,
+          start: isMobile ? "top 85%" : "top 95%",
+          once: true,
+        },
+      },
+    );
+    gsap.fromTo(
+      imgOneRef.current,
+      {
+        x: -30,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        ease: "power3.inOut",
+        scrollTrigger: {
+          trigger: imgOneRef.current,
+          start: isMobile ? "top 85%" : "top 95%",
+          once: true,
+        },
+      },
+    );
+    gsap.fromTo(
+      imgTwoRef.current,
+      {
+        x: 30,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        ease: "power3.inOut",
+        scrollTrigger: {
+          trigger: imgTwoRef.current,
+          start: isMobile ? "top 85%" : "top 95%",
+          once: true,
+        },
+      },
+    );
+  });
+
   return (
     <article className="w-full max-w-330 px-5 mx-auto mt-15 md:mt-37.5">
       <div className="w-full md:flex justify-between items-start gap-5 mb-15">
         <SectionTitle title={ACHIEVEMENTS_SECTION.title} />
-        <p className="font-poppins-regular text-[16px] text-secondary leading-6 w-full text-center md:text-start md:w-[clamp(300px,40vw,625px)]">
+        <p
+          ref={paragraphRef}
+          className="font-poppins-regular text-[16px] text-secondary leading-6 w-full text-center md:text-start md:w-[clamp(300px,40vw,625px)]"
+        >
           {ACHIEVEMENTS_SECTION.description}
         </p>
       </div>
       <section className="w-full md:flex md:justify-between flex-row justify-center items-center gap-5">
         <div className="flex flex-col items-center md:items-start gap-15">
-          <div className="flex items-center gap-4">
+          <div ref={imgOneRef} className="flex items-center gap-4">
             <img
               src={Twenty}
               alt="20"
@@ -33,7 +101,7 @@ export const AchievementsSection = () => {
             />
             <img src={RightDots} alt="" className="w-[clamp(40px,7vw,80px)]" />
           </div>
-          <div className="flex items-center gap-4 ml-23.75">
+          <div ref={imgTwoRef} className="flex items-center gap-4 ml-23.75">
             <img src={LeftDots} alt="" className="w-[clamp(40px,7vw,80px)]" />
             <img
               src={Twentyfive}

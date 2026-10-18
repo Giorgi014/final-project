@@ -24,8 +24,8 @@ export const ProjectsSection = ({
         actionHref={isAction ? ourProjects.actionHref : undefined}
       />
       <section className="w-full grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-10 mt-10 sm:mt-15">
-        {projects.map((project) => (
-          <ProjectCard key={project.image} {...project} />
+        {projects.map((project, index) => (
+          <ProjectCard key={project.image} index={index} {...project} />
         ))}
       </section>
     </article>

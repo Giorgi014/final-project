@@ -30,8 +30,8 @@ export const InovationDisplay = () => {
         })}
       </section>
       <section className="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
-        {INOVATION_PROJECTS.map((project) => (
-          <ProjectCard key={project.image} {...project} />
+        {INOVATION_PROJECTS.map((project, index) => (
+          <ProjectCard key={project.image} index={index} {...project} />
         ))}
       </section>
     </article>
