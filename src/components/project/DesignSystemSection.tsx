@@ -6,15 +6,47 @@ import {
   TYPOGRAPHY,
 } from "@/data/project";
 import { DesignSystemCard, IconRow, SectionTitle } from "@/components/ui";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
 
 const ICON_SIZE = "size-[clamp(32px,5vw,56px)]";
 
 export const DesignSystemSection = () => {
+  const descriptionRef = useRef<HTMLParagraphElement>(null);
+
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      descriptionRef.current,
+      {
+        x: -60,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power3.inOut",
+        scrollTrigger: {
+          trigger: descriptionRef.current,
+          start: "top 95%",
+          once: true,
+        },
+      },
+    );
+  });
+
   return (
     <article className="w-full max-w-330 px-5 mx-auto mt-15 md:mt-37.5">
       <section className="w-full max-w-156.5 mx-auto md:mx-0">
         <SectionTitle title="Design System" />
-        <p className="font-poppins-regular text-[16px] text-secondary leading-6 mt-4 mb-15 text-center md:text-start">
+        <p
+          ref={descriptionRef}
+          className="font-poppins-regular text-[16px] text-secondary leading-6 mt-4 mb-15 text-center md:text-start"
+        >
           {DESIGN_SYSTEM_DESCRIPTION}
         </p>
       </section>

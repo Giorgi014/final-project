@@ -7,6 +7,7 @@ export type {
   TypographySample,
   TypographyTag,
 } from "./designSystem";
+export type { ProjectMetric } from "./project";
 export type {
   AchievementsSectionContent,
   AchievementContent,

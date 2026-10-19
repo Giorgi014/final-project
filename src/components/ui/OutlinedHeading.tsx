@@ -1,4 +1,7 @@
-import { useId, type CSSProperties, type ReactNode } from "react";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef, type CSSProperties, type ReactNode } from "react";
 
 type OutlinedHeadingProps = {
   children: ReactNode;
@@ -11,7 +14,26 @@ export const OutlinedHeading = ({
   className = "",
   active = false,
 }: OutlinedHeadingProps) => {
-  const filterId = `outlined-heading-${useId().replace(/:/g, "")}`;
+  const filterId = "outlined-heading";
+  const headingRef = useRef<HTMLHeadingElement>(null);
+
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      headingRef.current,
+      { x: 30, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: headingRef.current,
+          start: "top 75%",
+          once: true,
+        },
+      },
+    );
+  });
 
   return (
     <>
@@ -34,6 +56,7 @@ export const OutlinedHeading = ({
         </filter>
       </svg>
       <h2
+        ref={headingRef}
         data-text={children}
         className={`relative font-comfortaa-bold text-[clamp(42px,7vw,83px)] leading-25.25 tracking-[-0.74px] transition-colors duration-700 ease-in-out before:content-[attr(data-text)] before:absolute before:inset-0 before:pointer-events-none before:text-base before:transition-opacity before:duration-700 before:ease-in-out before:[filter:var(--ring-filter)] ${
           active

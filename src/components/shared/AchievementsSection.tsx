@@ -26,24 +26,46 @@ export const AchievementsSection = () => {
   }, [allAchievement]);
 
   useGSAP(() => {
-    gsap.fromTo(
-      paragraphRef.current,
-      {
-        x: -30,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        delay: 0.35,
-        ease: "power3.inOut",
-        scrollTrigger: {
-          trigger: paragraphRef.current,
-          start: isMobile ? "top 85%" : "top 95%",
-          once: true,
+    if (isMobile) {
+      gsap.fromTo(
+        paragraphRef.current,
+        {
+          x: -30,
+          opacity: 0,
         },
-      },
-    );
+        {
+          x: 0,
+          opacity: 1,
+          delay: 0.35,
+          ease: "power3.inOut",
+          scrollTrigger: {
+            trigger: paragraphRef.current,
+            start: "top 85%",
+            once: true,
+          },
+        },
+      );
+    } else {
+      gsap.fromTo(
+        paragraphRef.current,
+        {
+          y: 30,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          delay: 0.35,
+          ease: "power3.inOut",
+          scrollTrigger: {
+            trigger: paragraphRef.current,
+            start: "top 85%",
+            once: true,
+          },
+        },
+      );
+    }
+
     gsap.fromTo(
       imgOneRef.current,
       {

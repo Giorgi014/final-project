@@ -7,3 +7,4 @@ export {
 } from "./designSystem";
 
 export { RELATED_PROJECTS } from "./relatedProjects";
+export { PROJECT_METRICS } from "./projectMetrics";

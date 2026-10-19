@@ -2,6 +2,10 @@ import { contactSchema, type ContactValues } from "@/schema/contact";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Button, Input } from "@/components/ui";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
 
 export const ContactForm = () => {
   const {
@@ -12,12 +16,42 @@ export const ContactForm = () => {
     resolver: zodResolver(contactSchema),
     mode: "onSubmit",
   });
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const isMobile = window.innerWidth < 768;
+
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
 
   const onSubmit = async (values: ContactValues) => {
     console.log(values);
   };
+
+  useGSAP(() => {
+    gsap.fromTo(
+      formRef.current?.children ?? [],
+      {
+        y: 60,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        delay: 0.3,
+        stagger: 0.25,
+        ease: "power3.inOut",
+        scrollTrigger: {
+          trigger: formRef.current,
+          start: isMobile ? "top 75%" : "top 85%",
+          once: true,
+        },
+      },
+    );
+  });
+
   return (
     <form
+      ref={formRef}
       className="w-full max-w-141.25 flex flex-col gap-y-6 items-center justify-between"
       onSubmit={handleSubmit(onSubmit)}
     >

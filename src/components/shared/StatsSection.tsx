@@ -5,11 +5,11 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger, useGSAP);
-
 export const StatsSection = ({ className }: { className?: string }) => {
   const sectionRef = useRef<HTMLElement>(null);
   const countRefs = useRef<(HTMLHeadingElement | null)[]>([]);
+
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
 
   useGSAP(() => {
     STATS_SECTION.stats.forEach((stat, i) => {

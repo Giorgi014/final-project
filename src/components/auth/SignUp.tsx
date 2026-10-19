@@ -4,6 +4,10 @@ import { GoogleLogo } from "@/assets";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { signUpSchema, type SignUpValues } from "@/schema/auth";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
 
 export const SignUp = () => {
   const {
@@ -14,26 +18,137 @@ export const SignUp = () => {
     resolver: zodResolver(signUpSchema),
     mode: "onSubmit",
   });
+  const descriptionRef = useRef<HTMLParagraphElement>(null);
+  const divRef = useRef<HTMLDivElement>(null);
+  const divTwoRef = useRef<HTMLDivElement>(null);
+  const paragraphRef = useRef<HTMLParagraphElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
 
   const onSubmit = async (values: SignUpValues) => {
     console.log(values);
   };
 
+  useGSAP(() => {
+    gsap.fromTo(
+      descriptionRef.current,
+      {
+        x: -60,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power3.inOut",
+        scrollTrigger: {
+          trigger: descriptionRef.current,
+          start: "top 95%",
+          once: true,
+        },
+      },
+    );
+    gsap.fromTo(
+      divRef.current?.children ?? [],
+      {
+        y: 60,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        delay: 0.3,
+        stagger: 0.55,
+        ease: "power3.inOut",
+        scrollTrigger: {
+          trigger: divRef.current,
+          start: "top 95%",
+          once: true,
+        },
+      },
+    );
+    gsap.fromTo(
+      divTwoRef.current,
+      {
+        y: 60,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        delay: 1.3,
+        stagger: 0.55,
+        ease: "power3.inOut",
+        scrollTrigger: {
+          trigger: divTwoRef.current,
+          start: "top 95%",
+          once: true,
+        },
+      },
+    );
+    gsap.fromTo(
+      paragraphRef.current,
+      {
+        y: 60,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        delay: 1.5,
+        stagger: 0.55,
+        ease: "power3.inOut",
+        scrollTrigger: {
+          trigger: paragraphRef.current,
+          start: "top 95%",
+          once: true,
+        },
+      },
+    );
+    gsap.fromTo(
+      sectionRef.current?.children ?? [],
+      {
+        y: 60,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        delay: 1.7,
+        stagger: 0.55,
+        ease: "power3.inOut",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 95%",
+          once: true,
+        },
+      },
+    );
+  });
+
   return (
     <form
-      className="bg-base/6 rounded-3xl p-7.5 border border-base/20 w-full max-w-183.5"
+      className="bg-base/6 rounded-3xl p-7.5 border border-base/20 w-full max-w-183.5 overflow-hidden"
       onSubmit={handleSubmit(onSubmit)}
     >
       <section className="w-full mb-7.5 text-center md:text-start">
         <SectionTitle title="Hi Designer" />
-        <p className="mt-4 font-poppins-regular text-[16px] text-secondary leading-6">
+        <p
+          ref={descriptionRef}
+          className="mt-4 font-poppins-regular text-[16px] text-secondary leading-6"
+        >
           Pizza ipsum dolor meat lovers buffalo. Extra broccoli parmesan ricotta
           garlic dolor sauce marinara Chicago marinara. Tomato dolor pesto pesto
           Bianca pesto roll onions.
         </p>
       </section>
       <section className="w-full">
-        <div className="w-full flex flex-col gap-y-6">
+        <div ref={divRef} className="w-full flex flex-col gap-y-6">
           <div className="w-full">
             <Input
               label="email"
@@ -89,7 +204,10 @@ export const SignUp = () => {
             )}
           </div>
         </div>
-        <div className="w-full flex justify-between items-center gap-5 mt-4">
+        <div
+          ref={divTwoRef}
+          className="w-full flex justify-between items-center gap-5 mt-4"
+        >
           <p className="text-secondary text-[16px] font-poppins-regular leading-6">
             By clicking agree with <span className="text-base">terms</span> of{" "}
             <span className="text-base">conditions</span>
@@ -98,11 +216,14 @@ export const SignUp = () => {
             Forgot Password
           </p>
         </div>
-        <p className="text-base text-[16px] font-poppins-regular leading-6 my-6 text-center">
+        <p
+          ref={paragraphRef}
+          className="text-base text-[16px] font-poppins-regular leading-6 my-6 text-center"
+        >
           Or Continue
         </p>
       </section>
-      <section className="w-full flex flex-col items-center">
+      <section ref={sectionRef} className="w-full flex flex-col items-center">
         <button
           type="button"
           className="w-full flex justify-center items-center text-base text-[16px] font-poppins-regular bg-base/6 border border-base/20 leading-6 rounded-3xl py-3 cursor-pointer"

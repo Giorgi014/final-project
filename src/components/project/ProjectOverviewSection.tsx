@@ -1,51 +1,63 @@
 import { SectionTitle } from "@/components/ui";
-
-type ProjectMetric = {
-  value: string;
-  label: string;
-  detail: string;
-  className: string;
-  detailClassName?: string;
-};
-
-const PROJECT_METRICS: ProjectMetric[] = [
-  {
-    value: "4",
-    label: "Timeline",
-    detail: "Weeks",
-    className:
-      "pl-5 sm:pr-10 lg:border-0 border-l-2 sm:border-r-2 border-base/20",
-  },
-  {
-    value: "2",
-    label: "Services",
-    detail: "UX/UI Design",
-    className:
-      "pl-5 md:pl-10 lg:px-10 border-l-2 sm:border-0 lg:border-l-2 border-base/20",
-    detailClassName: "whitespace-nowrap",
-  },
-  {
-    value: "5",
-    label: "Team",
-    detail: "2 Designers & 3 Developers",
-    className:
-      "pl-5 sm:pr-10 lg:px-10 border-l-2 sm:border-r-2 border-base/20",
-    detailClassName: "whitespace-nowrap",
-  },
-  {
-    value: "4.9",
-    label: "Client",
-    detail: "Rating",
-    className: "pl-5 md:pl-10 border-l-2 sm:border-0 border-base/20",
-  },
-];
+import { PROJECT_METRICS } from "@/data/project";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
 
 export const ProjectOverviewSection = () => {
+  const descriptionRef = useRef<HTMLParagraphElement>(null);
+  const divRef = useRef<HTMLElement>(null);
+
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      descriptionRef.current,
+      {
+        x: -60,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power3.inOut",
+        scrollTrigger: {
+          trigger: descriptionRef.current,
+          start: "top 95%",
+          once: true,
+        },
+      },
+    );
+    gsap.fromTo(
+      divRef.current,
+      {
+        x: -60,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power3.inOut",
+        scrollTrigger: {
+          trigger: divRef.current,
+          start: "top 95%",
+          once: true,
+        },
+      },
+    );
+  });
+
   return (
     <article className="w-full max-w-330 px-5 mx-auto">
       <section className="w-full max-w-157.5 mx-auto md:mx-0">
         <SectionTitle title="Project Overview" />
-        <p className="font-poppins-regular text-[16px] text-secondary leading-6 mt-4 mb-10 text-center md:text-start">
+        <p
+          ref={descriptionRef}
+          className="font-poppins-regular text-[16px] text-secondary leading-6 mt-4 mb-10 text-center md:text-start"
+        >
           Pizza ipsum dolor meat lovers buffalo. Extra broccoli parmesan ricotta
           garlic dolor sauce marinara Chicago marinara. Tomato dolor pesto pesto
           Bianca pesto roll onions.Pizza ipsum dolor meat lovers buffalo. Extra
@@ -53,7 +65,10 @@ export const ProjectOverviewSection = () => {
           marinara. Tomato dolor pesto pesto Bianca pesto roll onions.
         </p>
       </section>
-      <section className="w-full max-w-231.25 grid grid-cols-1 sm:grid-cols-2 gap-y-8 lg:flex lg:justify-between mx-auto lg:mx-0">
+      <section
+        ref={divRef}
+        className="w-full max-w-231.25 grid grid-cols-1 sm:grid-cols-2 gap-y-8 lg:flex lg:justify-between mx-auto lg:mx-0"
+      >
         {PROJECT_METRICS.map((metric) => (
           <div
             key={metric.label}
