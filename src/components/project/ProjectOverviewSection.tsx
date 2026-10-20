@@ -7,7 +7,7 @@ import { useRef } from "react";
 
 export const ProjectOverviewSection = () => {
   const descriptionRef = useRef<HTMLParagraphElement>(null);
-  const divRef = useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -30,24 +30,30 @@ export const ProjectOverviewSection = () => {
         },
       },
     );
-    gsap.fromTo(
-      divRef.current,
-      {
-        x: -60,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power3.inOut",
-        scrollTrigger: {
-          trigger: divRef.current,
-          start: "top 95%",
-          once: true,
-        },
-      },
+    const metrics = gsap.utils.toArray<HTMLElement>(
+      sectionRef.current?.children ?? [],
     );
+
+    metrics.forEach((metric) => {
+      gsap.fromTo(
+        metric,
+        {
+          x: -60,
+          opacity: 0,
+        },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.7,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: metric,
+            start: "top 90%",
+            once: true,
+          },
+        },
+      );
+    });
   });
 
   return (
@@ -66,7 +72,7 @@ export const ProjectOverviewSection = () => {
         </p>
       </section>
       <section
-        ref={divRef}
+        ref={sectionRef}
         className="w-full max-w-231.25 grid grid-cols-1 sm:grid-cols-2 gap-y-8 lg:flex lg:justify-between mx-auto lg:mx-0"
       >
         {PROJECT_METRICS.map((metric) => (

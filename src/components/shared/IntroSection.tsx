@@ -17,6 +17,8 @@ export const IntroSection = ({
   const paragraphRef = useRef<HTMLParagraphElement>(null);
   const linkRef = useRef<HTMLAnchorElement>(null);
 
+  const isMobile = window.innerWidth < 768;
+
   gsap.registerPlugin(ScrollTrigger, useGSAP);
 
   useGSAP(() => {
@@ -59,7 +61,10 @@ export const IntroSection = ({
 
     gsap.fromTo(
       linkRef.current,
-      { x: 60, opacity: 0 },
+      {
+        x: isMobile ? -60 : 60,
+        opacity: 0,
+      },
       {
         x: 0,
         opacity: 1,
@@ -67,7 +72,7 @@ export const IntroSection = ({
         ease: "power3.inOut",
         scrollTrigger: {
           trigger: headingRef.current,
-          start: "top 95%",
+          start: isMobile ? "top 75%" : "top 95%",
           once: true,
         },
       },
@@ -98,7 +103,7 @@ export const IntroSection = ({
           ref={linkRef}
           to={actionHref}
           onClick={onAction}
-          className="bg-transparent py-3 px-8 whitespace-nowrap rounded-3xl border border-base hover:border-primary hover:text-primary transition-colors duration-300 font-comfortaa-medium text-[20px] text-base leading-6 cursor-pointer"
+          className="inline-block bg-transparent py-3 px-8 whitespace-nowrap rounded-3xl border border-base hover:border-primary hover:text-primary transition-colors duration-300 font-comfortaa-medium text-[20px] text-base leading-6 cursor-pointer"
         >
           {actionLabel}
         </Link>

@@ -14,6 +14,7 @@ import {
   Services,
 } from "./pages/lazy";
 import { Loader } from "./components/ui/Loader";
+import "@/components/lib/gsap";
 import "@/index.css";
 
 const router = createBrowserRouter([

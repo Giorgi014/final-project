@@ -1,4 +1,5 @@
 export * from "./about";
+export * from "./animation";
 export * from "./auth";
 export * from "./contact";
 export * from "./home";
