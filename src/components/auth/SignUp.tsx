@@ -6,8 +6,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { signUpSchema, type SignUpValues } from "@/schema/auth";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
+import { Reveal } from "../animation";
 
 export const SignUp = () => {
   const {
@@ -24,37 +24,15 @@ export const SignUp = () => {
   const paragraphRef = useRef<HTMLParagraphElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
-
   const onSubmit = async (values: SignUpValues) => {
     console.log(values);
   };
 
   useGSAP(() => {
-    gsap.fromTo(
-      descriptionRef.current,
-      {
-        x: -60,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 1,
-        ease: "power3.inOut",
-        scrollTrigger: {
-          trigger: descriptionRef.current,
-          start: "top 95%",
-          once: true,
-        },
-      },
-    );
+    Reveal(descriptionRef.current, { duration: 1 });
     gsap.fromTo(
       divRef.current?.children ?? [],
-      {
-        y: 60,
-        opacity: 0,
-      },
+      { y: 60, opacity: 0 },
       {
         y: 0,
         opacity: 1,
@@ -69,52 +47,11 @@ export const SignUp = () => {
         },
       },
     );
-    gsap.fromTo(
-      divTwoRef.current,
-      {
-        y: 60,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        delay: 1.3,
-        stagger: 0.55,
-        ease: "power3.inOut",
-        scrollTrigger: {
-          trigger: divTwoRef.current,
-          start: "top 95%",
-          once: true,
-        },
-      },
-    );
-    gsap.fromTo(
-      paragraphRef.current,
-      {
-        y: 60,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        delay: 1.5,
-        stagger: 0.55,
-        ease: "power3.inOut",
-        scrollTrigger: {
-          trigger: paragraphRef.current,
-          start: "top 95%",
-          once: true,
-        },
-      },
-    );
+    Reveal(divTwoRef.current, { x: 0, y: 60, duration: 1, delay: 1.3 });
+    Reveal(paragraphRef.current, { x: 0, y: 60, duration: 1, delay: 1.5 });
     gsap.fromTo(
       sectionRef.current?.children ?? [],
-      {
-        y: 60,
-        opacity: 0,
-      },
+      { y: 60, opacity: 0 },
       {
         y: 0,
         opacity: 1,

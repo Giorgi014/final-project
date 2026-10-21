@@ -2,15 +2,12 @@ import { OUR_TEAM_SECTION } from "@/data/home";
 import { CornerFrame, OutlinedHeading, SectionTitle } from "@/components/ui";
 import { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { gsap } from "gsap";
+import { Reveal } from "../animation";
 
 export const TeamSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const allMembers = OUR_TEAM_SECTION.members.length;
   const itemsRef = useRef<HTMLDivElement[]>([]);
-
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
 
   useEffect(() => {
     const member = setInterval(() => {
@@ -22,26 +19,9 @@ export const TeamSection = () => {
 
   useGSAP(() => {
     itemsRef.current.forEach((el, i) => {
-      gsap.fromTo(
-        el,
-        {
-          x: -30,
-          opacity: 0,
-        },
-        {
-          x: 0,
-          opacity: 1,
-          delay: i * 0.1,
-          scrollTrigger: {
-            trigger: el,
-            start: "top 75%",
-            once: true,
-          },
-        },
-      );
+      Reveal(el, { x: -30, delay: i * 0.1, start: "top 75%" });
     });
   });
-
   return (
     <article className="w-full max-w-330 px-5 mx-auto mt-15 md:mt-37.5">
       <SectionTitle title={OUR_TEAM_SECTION.title} />
