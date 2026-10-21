@@ -3,8 +3,7 @@ import { ACHIEVEMENTS_SECTION } from "@/data/home";
 import { NumberedInfoCard, SectionTitle } from "@/components/ui";
 import { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { gsap } from "gsap";
+import { Reveal } from "../animation";
 
 export const AchievementsSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -15,8 +14,6 @@ export const AchievementsSection = () => {
 
   const isMobile = window.innerWidth < 768;
 
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
-
   useEffect(() => {
     const achievement = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % allAchievement);
@@ -26,80 +23,20 @@ export const AchievementsSection = () => {
   }, [allAchievement]);
 
   useGSAP(() => {
-    if (isMobile) {
-      gsap.fromTo(
-        paragraphRef.current,
-        {
-          x: -30,
-          opacity: 0,
-        },
-        {
-          x: 0,
-          opacity: 1,
-          delay: 0.35,
-          ease: "power3.inOut",
-          scrollTrigger: {
-            trigger: paragraphRef.current,
-            start: "top 85%",
-            once: true,
-          },
-        },
-      );
-    } else {
-      gsap.fromTo(
-        paragraphRef.current,
-        {
-          y: 30,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          delay: 0.35,
-          ease: "power3.inOut",
-          scrollTrigger: {
-            trigger: paragraphRef.current,
-            start: "top 85%",
-            once: true,
-          },
-        },
-      );
-    }
-
-    gsap.fromTo(
-      imgOneRef.current,
-      {
-        x: -30,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        ease: "power3.inOut",
-        scrollTrigger: {
-          trigger: imgOneRef.current,
-          start: isMobile ? "top 85%" : "top 95%",
-          once: true,
-        },
-      },
-    );
-    gsap.fromTo(
-      imgTwoRef.current,
-      {
-        x: 30,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        ease: "power3.inOut",
-        scrollTrigger: {
-          trigger: imgTwoRef.current,
-          start: isMobile ? "top 85%" : "top 95%",
-          once: true,
-        },
-      },
-    );
+    Reveal(paragraphRef.current, {
+      x: isMobile ? -30 : 0,
+      y: isMobile ? undefined : 30,
+      delay: 0.35,
+      start: "top 85%",
+    });
+    Reveal(imgOneRef.current, {
+      x: -30,
+      start: isMobile ? "top 85%" : "top 95%",
+    });
+    Reveal(imgTwoRef.current, {
+      x: 30,
+      start: isMobile ? "top 85%" : "top 95%",
+    });
   });
 
   return (

@@ -1,34 +1,9 @@
 import { SERVICE_CARDS } from "@/data/services";
 import { SectionTitle, ServiceCard } from "@/components/ui";
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { gsap } from "gsap";
+import { useReveal } from "@/hooks/useReveal";
 
 export const DesignSolutionsSection = () => {
-  const descriptionRef = useRef<HTMLParagraphElement>(null);
-
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
-
-  useGSAP(() => {
-    gsap.fromTo(
-      descriptionRef.current,
-      {
-        x: -30,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        ease: "power3.inOut",
-        scrollTrigger: {
-          trigger: descriptionRef.current,
-          start: "top 95%",
-          once: true,
-        },
-      },
-    );
-  });
+  const descriptionRef = useReveal<HTMLParagraphElement>({ x: -30 });
 
   return (
     <article className="w-full max-w-330 px-5 mt-15 sm:mt-25 lg:mt-62.5 mx-auto">

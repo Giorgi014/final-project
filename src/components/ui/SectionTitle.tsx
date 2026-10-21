@@ -1,35 +1,8 @@
 import { RightDots } from "@/assets";
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from "react";
+import { useReveal } from "@/hooks/useReveal";
 
 export const SectionTitle = ({ title }: { title: string }) => {
-  const headingRef = useRef<HTMLDivElement>(null);
-
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
-
-  useGSAP(() => {
-    gsap.fromTo(
-      headingRef.current,
-      {
-        x: -60,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power3.inOut",
-        scrollTrigger: {
-          trigger: headingRef.current,
-          start: "top 95%",
-          once: true,
-        },
-      },
-    );
-  });
-
+  const headingRef = useReveal<HTMLDivElement>({ x: -60 });
   return (
     <div
       ref={headingRef}

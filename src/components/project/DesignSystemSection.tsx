@@ -6,38 +6,12 @@ import {
   TYPOGRAPHY,
 } from "@/data/project";
 import { DesignSystemCard, IconRow, SectionTitle } from "@/components/ui";
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from "react";
+import { useReveal } from "@/hooks/useReveal";
 
 const ICON_SIZE = "size-[clamp(32px,5vw,56px)]";
 
 export const DesignSystemSection = () => {
-  const descriptionRef = useRef<HTMLParagraphElement>(null);
-
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
-
-  useGSAP(() => {
-    gsap.fromTo(
-      descriptionRef.current,
-      {
-        x: -60,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power3.inOut",
-        scrollTrigger: {
-          trigger: descriptionRef.current,
-          start: "top 95%",
-          once: true,
-        },
-      },
-    );
-  });
+  const descriptionRef = useReveal<HTMLParagraphElement>({ x: -60 });
 
   return (
     <article className="w-full max-w-330 px-5 mx-auto mt-15 md:mt-37.5">

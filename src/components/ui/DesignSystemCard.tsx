@@ -1,8 +1,5 @@
 import type { ReactNode } from "react";
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from "react";
+import { useReveal } from "@/hooks/useReveal";
 
 type DesignSystemCardProps = {
   title: string;
@@ -15,31 +12,14 @@ export const DesignSystemCard = ({
   className = "",
   children,
 }: DesignSystemCardProps) => {
-  const containerRef = useRef<HTMLDivElement>(null);
   const isMobile = window.innerWidth < 768;
 
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
-
-  useGSAP(() => {
-    gsap.fromTo(
-      containerRef.current,
-      {
-        scale: 0.5,
-        opacity: 0,
-      },
-      {
-        scale: 1,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power3.inOut",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: isMobile ? "top 85%" : "top 95%",
-          once: true,
-        },
-      },
-    );
+  const containerRef = useReveal<HTMLDivElement>({
+    x: 0,
+    scale: 0.5,
+    start: isMobile ? "top 85%" : "top 95%",
   });
+
   return (
     <div
       ref={containerRef}

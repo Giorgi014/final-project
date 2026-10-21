@@ -1,8 +1,5 @@
 import type { ProjectContent } from "@/types";
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useReveal } from "@/hooks/useReveal";
 
 export const ProjectCard = ({
   image,
@@ -10,33 +7,14 @@ export const ProjectCard = ({
   description,
   index = 0,
 }: ProjectContent) => {
-  const cardRef = useRef<HTMLDivElement>(null);
-
   const isMobile = window.innerWidth < 768;
 
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
-
-  useGSAP(() => {
-    gsap.fromTo(
-      cardRef.current,
-      {
-        y: 20,
-        scale: 0.8,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        scale: 1,
-        opacity: 1,
-        ease: "power3.inOut",
-        delay: isMobile ? (index % 1) * 0.15 : (index % 2) * 0.15,
-        scrollTrigger: {
-          trigger: cardRef.current,
-          start: isMobile ? "top 95%" : "top 85%",
-          once: true,
-        },
-      },
-    );
+  const cardRef = useReveal<HTMLDivElement>({
+    x: 0,
+    y: 20,
+    scale: 0.8,
+    delay: isMobile ? 0 : (index % 2) * 0.15,
+    start: isMobile ? "top 95%" : "top 85%",
   });
 
   return (

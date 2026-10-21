@@ -3,8 +3,7 @@ import type { IntroSectionProps } from "@/types";
 import { RightDots } from "@/assets";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Reveal } from "../animation";
 
 export const IntroSection = ({
   title,
@@ -19,64 +18,14 @@ export const IntroSection = ({
 
   const isMobile = window.innerWidth < 768;
 
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
-
   useGSAP(() => {
-    gsap.fromTo(
-      headingRef.current,
-      {
-        x: -60,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power3.inOut",
-        scrollTrigger: {
-          trigger: headingRef.current,
-          start: "top 95%",
-          once: true,
-        },
-      },
-    );
-    gsap.fromTo(
-      paragraphRef.current,
-      {
-        x: -60,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power3.inOut",
-        scrollTrigger: {
-          trigger: paragraphRef.current,
-          start: "top 95%",
-          once: true,
-        },
-      },
-    );
-
-    gsap.fromTo(
-      linkRef.current,
-      {
-        x: isMobile ? -60 : 60,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power3.inOut",
-        scrollTrigger: {
-          trigger: headingRef.current,
-          start: isMobile ? "top 75%" : "top 95%",
-          once: true,
-        },
-      },
-    );
+    Reveal(headingRef.current);
+    Reveal(paragraphRef.current);
+    Reveal(linkRef.current, {
+      x: isMobile ? -60 : 60,
+      start: isMobile ? "top 75%" : "top 95%",
+      trigger: headingRef.current,
+    });
   });
 
   return (

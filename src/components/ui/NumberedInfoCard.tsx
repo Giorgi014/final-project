@@ -1,9 +1,6 @@
 import type { NumberedInfoCardProps } from "@/types";
 import { CornerFrame } from "./CornerFrame";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { gsap } from "gsap";
-import { useRef } from "react";
+import { useReveal } from "@/hooks/useReveal";
 
 export const NumberedInfoCard = ({
   num,
@@ -12,29 +9,12 @@ export const NumberedInfoCard = ({
   className,
   active = false,
 }: NumberedInfoCardProps) => {
-  const divRef = useRef<HTMLDivElement>(null);
-
   const isMobile = window.innerWidth < 768;
 
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
-
-  useGSAP(() => {
-    gsap.fromTo(
-      divRef.current,
-      {
-        y: 50,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        scrollTrigger: {
-          trigger: divRef.current,
-          start: isMobile ? "top 75%" : "top 85%",
-          once: true,
-        },
-      },
-    );
+  const divRef = useReveal<HTMLDivElement>({
+    x: 0,
+    y: 50,
+    start: isMobile ? "top 75%" : "top 85%",
   });
 
   return (

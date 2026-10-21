@@ -2,8 +2,8 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { SectionTitle } from "@/components/ui";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
+import { Reveal } from "../animation";
 
 export const ContactSection = () => {
   const descriptionRef = useRef<HTMLParagraphElement>(null);
@@ -11,34 +11,13 @@ export const ContactSection = () => {
 
   const isMobile = window.innerWidth < 768;
 
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
+  const start = isMobile ? "top 85%" : "top 95%";
 
   useGSAP(() => {
-    gsap.fromTo(
-      descriptionRef.current,
-      {
-        x: -60,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 1,
-        delay: 0.3,
-        ease: "power3.inOut",
-        scrollTrigger: {
-          trigger: descriptionRef.current,
-          start: isMobile ? "top 85%" : "top 95%",
-          once: true,
-        },
-      },
-    );
+    Reveal(descriptionRef.current, { duration: 1, delay: 0.3, start });
     gsap.fromTo(
       listRef.current?.children ?? [],
-      {
-        x: -60,
-        opacity: 0,
-      },
+      { x: -60, opacity: 0 },
       {
         x: 0,
         opacity: 1,
@@ -46,14 +25,11 @@ export const ContactSection = () => {
         delay: 0.3,
         stagger: 0.25,
         ease: "power3.inOut",
-        scrollTrigger: {
-          trigger: listRef.current,
-          start: isMobile ? "top 85%" : "top 95%",
-          once: true,
-        },
+        scrollTrigger: { trigger: listRef.current, start, once: true },
       },
     );
   });
+
   return (
     <article className="w-full max-w-330 px-5 mx-auto flex flex-col justify-between items-center md:flex-row md:items-start gap-5 mt-15 md:mt-35 lg:mt-50">
       <section className="w-full max-w-175">

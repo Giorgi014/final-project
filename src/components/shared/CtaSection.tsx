@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { LuMoveRight } from "react-icons/lu";
+import { Reveal } from "../animation";
 
 export const CtaSection = () => {
   const bgContainerRef = useRef<HTMLElement>(null);
@@ -15,95 +16,41 @@ export const CtaSection = () => {
   gsap.registerPlugin(ScrollTrigger, useGSAP);
 
   const isMobile = window.innerWidth < 768;
+  const start = isMobile ? "top 75%" : "top 85%";
 
   useGSAP(() => {
-    gsap.fromTo(
-      bgContainerRef.current,
-      {
-        scale: 0.8,
-        opacity: 0,
-      },
-      {
-        scale: 1,
-        opacity: 1,
-        scrollTrigger: {
-          trigger: bgContainerRef.current,
-          start: isMobile ? "top 75%" : "top 85%",
-          once: true,
-        },
-      },
-    );
-    gsap.fromTo(
-      characterRef.current,
-      {
-        scale: 0.8,
-        opacity: 0,
-      },
-      {
-        scale: 1,
-        opacity: 1,
-        delay: 1,
-        scrollTrigger: {
-          trigger: characterRef.current,
-          start: isMobile ? "top 75%" : "top 85%",
-          once: true,
-        },
-      },
-    );
-    gsap.fromTo(
-      headingRef.current,
-      {
-        y: 50,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1.3,
-        delay: 0.3,
-        scrollTrigger: {
-          trigger: headingRef.current,
-          start: isMobile ? "top 75%" : "top 85%",
-          once: true,
-        },
-      },
-    );
-    gsap.fromTo(
-      descriptionRef.current,
-      {
-        y: 50,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1.3,
-        delay: 0.5,
-        scrollTrigger: {
-          trigger: descriptionRef.current,
-          start: isMobile ? "top 75%" : "top 85%",
-          once: true,
-        },
-      },
-    );
-    gsap.fromTo(
-      inputRef.current,
-      {
-        y: 50,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1.3,
-        delay: 0.5,
-        scrollTrigger: {
-          trigger: inputRef.current,
-          start: "top 80%",
-          once: true,
-        },
-      },
-    );
+    Reveal(bgContainerRef.current, {
+      x: 0,
+      scale: 0.8,
+      start,
+    });
+    Reveal(characterRef.current, {
+      x: 0,
+      scale: 0.8,
+      delay: 1,
+      start,
+    });
+    Reveal(headingRef.current, {
+      x: 0,
+      y: 50,
+      duration: 1.3,
+      delay: 0.3,
+      start,
+    });
+    Reveal(descriptionRef.current, {
+      x: 0,
+      y: 50,
+      duration: 1.3,
+      delay: 0.5,
+      start,
+    });
+    Reveal(inputRef.current, {
+      x: 0,
+      y: 50,
+      duration: 1.3,
+      delay: 0.5,
+      start,
+    });
   });
 
   return (

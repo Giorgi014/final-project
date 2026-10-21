@@ -2,58 +2,20 @@ import { SectionTitle } from "@/components/ui";
 import { PROJECT_METRICS } from "@/data/project";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
+import { Reveal } from "../animation";
 
 export const ProjectOverviewSection = () => {
   const descriptionRef = useRef<HTMLParagraphElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
-
   useGSAP(() => {
-    gsap.fromTo(
-      descriptionRef.current,
-      {
-        x: -60,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power3.inOut",
-        scrollTrigger: {
-          trigger: descriptionRef.current,
-          start: "top 95%",
-          once: true,
-        },
-      },
-    );
-    const metrics = gsap.utils.toArray<HTMLElement>(
-      sectionRef.current?.children ?? [],
-    );
-
-    metrics.forEach((metric) => {
-      gsap.fromTo(
-        metric,
-        {
-          x: -60,
-          opacity: 0,
-        },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 0.7,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: metric,
-            start: "top 90%",
-            once: true,
-          },
-        },
-      );
-    });
+    Reveal(descriptionRef.current);
+    gsap.utils
+      .toArray<HTMLElement>(sectionRef.current?.children ?? [])
+      .forEach((el) => {
+        Reveal(el, { duration: 0.7, ease: "power3.out", start: "top 90%" });
+      });
   });
 
   return (

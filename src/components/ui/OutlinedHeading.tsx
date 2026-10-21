@@ -1,7 +1,5 @@
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef, type CSSProperties, type ReactNode } from "react";
+import { useReveal } from "@/hooks/useReveal";
+import { type CSSProperties, type ReactNode } from "react";
 
 type OutlinedHeadingProps = {
   children: ReactNode;
@@ -15,24 +13,10 @@ export const OutlinedHeading = ({
   active = false,
 }: OutlinedHeadingProps) => {
   const filterId = "outlined-heading";
-  const headingRef = useRef<HTMLHeadingElement>(null);
 
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
-
-  useGSAP(() => {
-    gsap.fromTo(
-      headingRef.current,
-      { x: 30, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        scrollTrigger: {
-          trigger: headingRef.current,
-          start: "top 75%",
-          once: true,
-        },
-      },
-    );
+  const headingRef = useReveal<HTMLHeadingElement>({
+    x: 30,
+    start: "top 75%",
   });
 
   return (

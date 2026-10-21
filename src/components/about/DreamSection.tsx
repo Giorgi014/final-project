@@ -1,37 +1,15 @@
 import { ABOUT_SERVICE_CARDS } from "@/data/about";
 import { SectionTitle, ServiceCard } from "@/components/ui";
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from "react";
+import { useReveal } from "@/hooks/useReveal";
 
 export const DreamSection = () => {
-  const descriptionRef = useRef<HTMLParagraphElement>(null);
-
   const isMobile = window.innerWidth < 768;
 
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
-
-  useGSAP(() => {
-    gsap.fromTo(
-      descriptionRef.current,
-      {
-        x: -60,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 1,
-        delay: 0.3,
-        ease: "power3.inOut",
-        scrollTrigger: {
-          trigger: descriptionRef.current,
-          start: isMobile ? "top 95%" : "top 120%",
-          once: true,
-        },
-      },
-    );
+  const descriptionRef = useReveal<HTMLParagraphElement>({
+    x: -60,
+    duration: 1,
+    delay: 0.3,
+    start: isMobile ? "top 95%" : "top 120%",
   });
 
   return (

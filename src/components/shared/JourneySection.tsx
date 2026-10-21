@@ -1,34 +1,14 @@
 import { INTRO_SECTION } from "@/data/home";
 import { IntroSection } from "@/components/shared/IntroSection";
 import { Journey, Stroke } from "@/assets";
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { gsap } from "gsap";
+import { useReveal } from "@/hooks/useReveal";
 
 export const JourneySection = () => {
   const ourJourney = INTRO_SECTION.ourJourney;
-  const sectionRef = useRef<HTMLElement>(null);
 
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
-
-  useGSAP(() => {
-    gsap.fromTo(
-      sectionRef.current,
-      {
-        opacity: 0,
-      },
-      {
-        opacity: 1,
-        ease: "power3.inOut",
-        duration: 1,
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 95%",
-          once: true,
-        },
-      },
-    );
+  const sectionRef = useReveal<HTMLElement>({
+    x: 0,
+    duration: 1,
   });
 
   return (
